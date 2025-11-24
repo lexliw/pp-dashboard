@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard Áreas Executivas</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- PapaParse para CSV parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="logo">Z</div>
+            <div>
+                <h1>DASHBOARD ÁREAS EXECUTIVAS</h1>
+                <!-- <div style="color:var(--muted);font-size:13px">Interativo • Responsivo • Baseado em CSV</div> -->
+            </div>
+            <div id="controls-file" class="controls" style="display: flex;">
+                <label class="file-btn" title="Carregar CSV local">
+                    <input id="csvFile" type="file" accept=".csv,text/csv" />
+                    <span class="material-symbols-outlined">file_open</span>
+                </label>
+
+                <button id="btnLoadDefault" class="select">
+                    <span class="material-symbols-outlined">settings_backup_restore</span>
+                </button>
+            </div>
+
+        </header>
+
+        <main class="grid">
+
+            <section class="card col-left">
+                <div class="controls-buttons">
+                    <div class=" controls-buttons-left">
+                    </div>
+                    <!-- <div class=" controls-buttons-right">
+                        <span class="material-symbols-outlined" onclick="showFilters()">filter_alt</span>
+                    </div> -->
+                    <div class="controls-buttons-right">
+                        <span class="material-symbols-outlined" onclick="showFilters()" title="Filtro">filter_alt</span>
+                    </div>
+                </div>
+
+                <div id="controls-prover" class="controls" style="display: none;">
+                    <div class="filters">
+                        <div>
+                            <label class="lbl">Área (multiseleção)</label>
+                            <select id="areaSelect" class="select" multiple></select>
+                        </div>
+
+                        <div>
+                            <label class="lbl">Pilar (multiseleção)</label>
+                            <select id="pilarSelect" class="select" multiple></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-top">
+                    <div class="big-number">
+                        <div class="num" id="totalUnique">0</div>
+                        <div class="label">CONTAGEM GERAL <p>(voluntários únicos)</p>
+                        </div>
+                    </div>
+
+                    <div class="donut-box">
+                        <div class="chart-wrap small" id="donutPilar"></div>
+                    </div>
+                </div>
+
+                <div class="row-charts">
+                    <div class="chart-wrap scrollable" id="barArea"></div>
+                    <div class="chart-wrap scrollable" id="barFuncao"></div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="summary-header">
+                    <div class="title">Resumo por Função e Área</div>
+                    <div class="filter-label">Filtro aplicado: <span id="appliedFilters">Nenhum</span></div>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-col">
+                        <div class="summary-title">Top Funções</div>
+                        <div class="small-list" id="listFuncao"></div>
+                    </div>
+
+                    <div class="summary-col">
+                        <div class="summary-title">Top Áreas</div>
+                        <div class="small-list" id="listArea"></div>
+                    </div>
+                </div>
+
+                <footer class="note">Tema escuro com destaque em verde água — contatos: (botão) para carregar CSV
+                </footer>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

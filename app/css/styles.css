@@ -1,0 +1,256 @@
+:root{
+  --accent: rgb(61,174,171);
+  --bg-dark:#041613;
+  --panel:#0b2b27;
+  --panel-2:#072e2b;
+  --text:#e6fbf9;
+  --muted:#b8dcd9;
+  --card-radius:12px;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, rgba(4,22,19,1) 0%, rgba(7,46,43,1) 60%);
+  color:var(--text);
+}
+
+/* Container */
+.container{
+  max-width:1200px;
+  margin:18px auto;
+  padding:18px;
+}
+
+/* Header */
+.dashboard-header{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.logo {
+  /* Defina a largura e altura do seu logo */
+  width: 56px; /* Ajuste conforme a largura do seu logo.png */
+  height: 56px; /* Ajuste conforme a altura do seu logo.png */
+
+  /* Adicione a imagem de fundo */
+  background-image: url('logo.png'); /* IMPORTANT: Atualize com o caminho correto */
+  background-size: contain; /* Redimensiona a imagem para caber completamente dentro do contêiner */
+  /* Outras opções para background-size:
+     - cover: Cobre toda a área, pode cortar partes da imagem.
+     - 100% 100%: Estica a imagem para preencher toda a largura e altura.
+  */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-position: center;  /* Centraliza a imagem no contêiner */
+
+  /* Se você manteve o "Z" no HTML e quer escondê-lo */
+  font-size: 0; /* Ou */
+  text-indent: -9999px; /* Move o texto para fora da tela */
+  line-height: 0; /* Garante que a linha do texto não ocupe espaço */
+}
+
+.controls{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* Buttons & selects */
+.select, .file-btn{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px 10px;
+  border-radius:8px;
+  color:var(--text);
+  font-size:14px;
+  margin-bottom:22px;
+}
+
+.file-btn input[type=file]{ display:none; }
+
+.lbl{
+  font-size:12px;
+  color:var(--muted);
+  display:block;
+  margin-bottom:6px;
+}
+
+.filters{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+select[multiple]{
+  min-width:220px;
+  height:110px;
+}
+
+/* Grid layout */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+@media(max-width:900px){
+  .grid{ grid-template-columns:1fr; }
+}
+
+/* Cards */
+.card{
+  background: linear-gradient(180deg, rgba(6,33,31,0.85), rgba(4,20,19,0.6));
+  border-radius:var(--card-radius);
+  padding:14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Big number */
+.big-number{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.big-number .num{
+  font-size:56px;
+  font-weight:800;
+  color:var(--accent);
+}
+
+.big-number .label{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.controls-buttons{
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+}
+
+
+
+/* Donut */
+.donut-box{
+  width:370px;
+  min-width:240px;
+}
+
+/* Charts */
+.chart-wrap{
+  height:320px;
+  max-height:320px;
+  overflow-y:auto;
+}
+
+.chart-wrap.small{
+  height:220px;
+  max-height:220px;
+  overflow-y:auto;
+}
+
+/* Force apex respect container */
+.chart-wrap .apexcharts-canvas{
+  max-height:100% !important;
+  overflow-y:auto !important;
+}
+
+/* Lists */
+.small-list{
+  max-height:360px;
+  overflow:auto;
+  margin-top:10px;
+  padding-right:6px;
+}
+
+.small-list .row{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.02);
+  font-size:13px;
+}
+
+/* Scrollbar */
+.small-list::-webkit-scrollbar,
+select[multiple]::-webkit-scrollbar{
+  width:8px;
+}
+
+.small-list::-webkit-scrollbar-thumb,
+select[multiple]::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.4);
+  border-radius:8px;
+}
+
+/* Summary section */
+.summary-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.title{
+  font-weight:700;
+}
+
+.filter-label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.summary-grid{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.summary-col{
+  flex:1;
+  min-width:250px;
+}
+
+.summary-title{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.note{
+  margin-top:14px;
+  text-align:right;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.row-top{
+  display: flex; /* Permite que os gráficos fiquem lado a lado */
+  gap: 50px;     /* Opcional: Adiciona espaço entre os gráficos */
+  align-items: flex-start; /* Alinha os gráficos no topo da linha */
+}
+
+.row-charts{
+  display: flex; /* Permite que os gráficos fiquem lado a lado */
+  gap: 20px;     /* Opcional: Adiciona espaço entre os gráficos */
+  align-items: flex-start; /* Alinha os gráficos no topo da linha */
+}
+
+.chart-wrap {
+  flex: 1; /* Faz com que ambos os gráficos ocupem o mesmo espaço na linha */
+  /* Remova qualquer max-height do chart-wrap que não seja o .scrollable */
+}
+
+.scrollable {
+  max-height: 320px !important; /* Limita a altura do box do gráfico */
+  overflow-y: auto !important;  /* Adiciona a barra de rolagem vertical */
+  overflow-x: hidden; /* Opcional: Garante que não haja scroll horizontal */
+  padding: 5px; /* Opcional: Adiciona um pequeno padding interno para o scrollbar não ficar colado */
+}
