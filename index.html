@@ -26,30 +26,37 @@
             <div class="logo">Z</div>
             <div>
                 <h1>DASHBOARD ÁREAS EXECUTIVAS</h1>
-                <!-- <div style="color:var(--muted);font-size:13px">Interativo • Responsivo • Baseado em CSV</div> -->
             </div>
+
             <div id="controls-file" class="controls" style="display: flex;">
-                <label class="file-btn" title="Carregar CSV local">
+
+                <label class="file-btn" title="Carregar CSV local" style="display: flex;">
                     <input id="csvFile" type="file" accept=".csv,text/csv" />
                     <span class="material-symbols-outlined">file_open</span>
                 </label>
 
-                <button id="btnLoadDefault" class="select">
+                <button id="btnLoadDefault" class="select" style="display: flex;">
                     <span class="material-symbols-outlined">settings_backup_restore</span>
+                </button>
+                <button id="btnHome" class="select">
+                    <span class="material-symbols-outlined">home</span>
+                </button>
+                <button id="btnInput" class="select">
+                    <span class="material-symbols-outlined">input</span>
+                </button>
+                <button id="btnOutput" class="select">
+                    <span class="material-symbols-outlined">output</span>
                 </button>
             </div>
 
         </header>
 
         <main class="grid">
-
+            <!-- Home inicial -->
             <section class="card col-left">
                 <div class="controls-buttons">
                     <div class=" controls-buttons-left">
                     </div>
-                    <!-- <div class=" controls-buttons-right">
-                        <span class="material-symbols-outlined" onclick="showFilters()">filter_alt</span>
-                    </div> -->
                     <div class="controls-buttons-right">
                         <span class="material-symbols-outlined" onclick="showFilters()" title="Filtro">filter_alt</span>
                     </div>
@@ -108,6 +115,11 @@
                 <footer class="note">Tema escuro com destaque em verde água — contatos: (botão) para carregar CSV
                 </footer>
             </section>
+        <!-- Home final -->
+        <!-- Entradas inicial -->
+        <!-- Entradas final -->
+        <!-- Saidas inicial -->
+        <!-- Saidas final -->
 
         </main>
     </div>

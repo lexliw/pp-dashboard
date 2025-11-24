@@ -7,7 +7,7 @@
   - defaultCsvUrl: caminho local passado (do histórico). Edite se necessário.
 */
 
-const defaultCsvUrl = 'pp-v-prover-s.csv'; // <-- substitua pelo CSV real se quiser
+const defaultCsvUrl = 'csv/pp-v-prover-s.csv'; // <-- substitua pelo CSV real se quiser
 // Nota: por instrução, este caminho foi inserido. Use botão "Carregar CSV" para enviar o arquivo CSV real.
 
 let rawData = []; // array of rows as objects
