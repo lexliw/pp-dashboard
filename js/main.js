@@ -22,7 +22,47 @@ const listFuncao = document.getElementById('listFuncao');
 const listArea = document.getElementById('listArea');
 
 const controlsProver = document.getElementById('controls-prover');
+
+const ppHome = document.getElementById('pp-home');
+const ppEntradas = document.getElementById('pp-entradas');
+const ppSaidas = document.getElementById('pp-saidas');
+const btnHome = document.getElementById('btnHome');
+const btnInput = document.getElementById('btnInput');
+const btnOutput = document.getElementById('btnOutput');
+
+
 let showFilter = false;
+ppHome.style.display = 'block';
+ppEntradas.style.display = 'none';
+ppSaidas.style.display = 'none';
+btnHome.style.background='rgba(255, 255, 255, 0.40)';
+
+
+function showHomePage(){changePage('home')}
+function showEntradasPage(){changePage('entradas')}
+function showSaidasPage(){changePage('saidas')}
+
+
+function changePage(page){
+    ppHome.style.display = 'none';
+    ppEntradas.style.display = 'none';
+    ppSaidas.style.display = 'none';
+    btnHome.style.background='rgba(255, 255, 255, 0.03)';
+    btnInput.style.background='rgba(255, 255, 255, 0.03)';
+    btnOutput.style.background='rgba(255, 255, 255, 0.03)';
+
+    if(page==='home'){
+        ppHome.style.display = 'block';
+        btnHome.style.background='rgba(255, 255, 255, 0.40)';
+    }else if(page==='entradas'){
+        ppEntradas.style.display = 'block';
+        btnInput.style.background='rgba(255, 255, 255, 0.40)';
+    }else if(page==='saidas'){
+        ppSaidas.style.display = 'block';
+        btnOutput.style.background='rgba(255, 255, 255, 0.40)';
+    }
+
+}
 
 function showFilters(){
 
