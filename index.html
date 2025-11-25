@@ -30,22 +30,19 @@
 
             <div id="controls-file" class="controls" style="display: flex;">
 
-                <label class="file-btn" title="Carregar CSV local" style="display: flex;">
-                    <input id="csvFile" type="file" accept=".csv,text/csv" />
-                    <span class="material-symbols-outlined">file_open</span>
-                </label>
-
-                <button id="btnLoadDefault" class="select" style="display: flex;">
+                <button id="btnLoadDefault" class="select" style="display: none;">
                     <span class="material-symbols-outlined">settings_backup_restore</span>
                 </button>
                 <button id="btnHome" class="select">
-                    <span class="material-symbols-outlined" onclick="showHomePage()" title="Home Page">home</span>
+                    <span class="material-symbols-outlined" onclick="showHomePage()" title="Home Page">groups</span>
                 </button>
                 <button id="btnInput" class="select">
-                    <span class="material-symbols-outlined" onclick="showEntradasPage()" title="Entradas">input</span>
+                    <span class="material-symbols-outlined" onclick="showEntradasPage()"
+                        title="Entradas">person_add</span>
                 </button>
                 <button id="btnOutput" class="select">
-                    <span class="material-symbols-outlined" onclick="showSaidasPage()" title="Saídas">output</span>
+                    <span class="material-symbols-outlined" onclick="showSaidasPage()"
+                        title="Saídas">transfer_within_a_station</span>
                 </button>
             </div>
 
@@ -59,8 +56,16 @@
                         <div class=" controls-buttons-left">
                         </div>
                         <div class="controls-buttons-right">
-                            <span class="material-symbols-outlined" onclick="showFilters()"
-                                title="Filtro">filter_alt</span>
+                            <div>
+                                <label class="file-btn" title="Carregar CSV local">
+                                    <input id="csvFile" type="file" accept=".csv,text/csv" />
+                                    <span class="material-symbols-outlined">file_open</span>
+                                </label>
+                            </div>
+                            <div>
+                                <span class="material-symbols-outlined" onclick="showFilters()"
+                                    title="Filtro">filter_alt</span>
+                            </div>
                         </div>
                     </div>
 
@@ -124,7 +129,7 @@
         <div id="pp-entradas">
             <main class="grid">
                 <section class="card col-left">
-                    
+
                 </section>
                 <section class="card">
 

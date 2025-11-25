@@ -60,7 +60,7 @@ html,body{
 }
 
 /* Buttons & selects */
-.select, .file-btn{
+.select{
   background:rgba(255,255,255,0.03);
   border:1px solid rgba(255,255,255,0.04);
   padding:8px 10px;
@@ -68,6 +68,21 @@ html,body{
   color:var(--text);
   font-size:14px;
   margin-bottom:22px;
+}
+
+/* .file-btn{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px 10px;
+  border-radius:8px;
+  color:var(--text);
+  font-size:14px;
+  margin-bottom:22px;
+} */
+.file-btn {
+    display: flex; /* Transforma o label em um contêiner flexível */
+    align-items: center; /* Centraliza verticalmente o input e o span */
+    cursor: pointer;
 }
 
 .file-btn input[type=file]{ display:none; }
@@ -131,10 +146,15 @@ select[multiple]{
   grid-area: header;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 10px 0 10px;
 }
 
+.controls-buttons-right {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px; 
+}
 
 
 /* Donut */
