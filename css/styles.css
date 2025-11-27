@@ -108,7 +108,7 @@ select[multiple]{
 /* Grid layout */
 .grid{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:18px;
 }
 
@@ -116,12 +116,15 @@ select[multiple]{
   .grid{ grid-template-columns:1fr; }
 }
 
-/* Cards */
-.card{
-  background: linear-gradient(180deg, rgba(6,33,31,0.85), rgba(4,20,19,0.6));
-  border-radius:var(--card-radius);
-  padding:14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+/* Grid layout */
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+}
+
+@media(max-width:900px){
+  .grid2{ grid-template-columns:1fr; }
 }
 
 /* Big number */
@@ -148,6 +151,33 @@ select[multiple]{
   align-items: center;
   justify-content: flex-end;
   padding: 0 10px 0 10px;
+}
+
+.controls-buttons-left {
+    /* Mantém o display flex para controle de alinhamento */
+    display: flex;
+    /* Garante que o conteúdo (como o <p>) comece no lado esquerdo */
+    justify-content: flex-start; 
+    /* Remove o gap de 15px se você quiser que o texto comece colado à borda esquerda. 
+       Se for necessário um padding interno, é melhor usar 'padding-left'. */
+    /* gap: 15px; */ 
+    
+    /* Crucial: Permite que a div ocupe toda a largura disponível no seu contêiner pai. */
+    width: 100%; 
+
+    /* Garante que o conteúdo interno (o <p>) seja alinhado verticalmente no centro se houver outros itens. */
+    align-items: center; 
+}
+
+/* 🎯 Alinhamento do Texto Interno */
+.controls-buttons-left p {
+    /* Garante que o texto seja alinhado à esquerda */
+    text-align: left; 
+    
+    /* Faz com que o <p> ocupe todo o espaço horizontal dentro da div flexível, 
+       empurrando o texto para a extremidade esquerda (se for necessário usar 
+       o "flex-start" na div pai, mas é opcional aqui). */
+    flex-grow: 1; 
 }
 
 .controls-buttons-right {
@@ -275,3 +305,40 @@ select[multiple]::-webkit-scrollbar-thumb{
   padding: 5px; /* Opcional: Adiciona um pequeno padding interno para o scrollbar não ficar colado */
 }
 
+/* Cards */
+.card{
+  background: linear-gradient(180deg, rgba(6,33,31,0.85), rgba(4,20,19,0.6));
+  border-radius:var(--card-radius);
+  padding:14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  /* 1. Trava a altura do card. Use 'max-height' para que ele possa ser menor 
+     se o conteúdo for pequeno, mas nunca maior que 350px. */
+  max-height: 350px; 
+
+  /* 2. Permite a rolagem vertical (scroll) quando o conteúdo exceder 350px. */
+  overflow-y: auto; 
+  
+  /* 3. Opcional: Garante que o conteúdo comece no topo e adiciona um espaçamento */
+  display: block; 
+  /* padding: 15px; */
+  
+  /* Você pode querer adicionar estilos visuais aqui, como sombra e borda */
+  /* background-color: white; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* ⚠️ Ajuste Crucial para o ApexCharts */
+/* Se o seu gráfico for horizontal (barras longas), a biblioteca tenta definir a 
+   altura baseada no número de itens. Precisamos dizer ao ApexCharts para usar 
+   apenas o espaço necessário e deixar o 'overflow' do CARD funcionar.
+   
+   A classe .apexcharts-canvas é o contêiner interno do gráfico.
+*/
+.card .apexcharts-canvas {
+    /* Permite que o height seja definido pelo cálculo interno do gráfico (ex: 2300px), 
+       mas o overflow do .card o recortará, criando a barra de rolagem. 
+       Use !important apenas se a altura estiver sendo forçada no JS/inline. */
+    height: auto !important; 
+    min-height: 100%; /* Garante que ele preencha a altura do card se necessário, mas o scroll irá contê-lo */
+}

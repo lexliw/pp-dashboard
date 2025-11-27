@@ -49,38 +49,37 @@
         </header>
         <!-- Home inicial -->
         <div id="pp-home">
+            <div class="controls-buttons">
+                <div class=" controls-buttons-left">
+                    <p>DEMOGRAFIA</p>
+                </div>
+                <div class="controls-buttons-right">
+                    <div>
+                        <label class="file-btn" title="Carregar CSV local">
+                            <input id="csvFile" type="file" accept=".csv,text/csv" />
+                            <span class="material-symbols-outlined">file_open</span>
+                        </label>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined" onclick="showFilters()" title="Filtro">filter_alt</span>
+                    </div>
+                </div>
+            </div>
+            <div id="controls-prover" class="controls" style="display: none;">
+                <div class="filters">
+                    <div>
+                        <label class="lbl">Área (multiseleção)</label>
+                        <select id="areaSelect" class="select" multiple></select>
+                    </div>
+
+                    <div>
+                        <label class="lbl">Pilar (multiseleção)</label>
+                        <select id="pilarSelect" class="select" multiple></select>
+                    </div>
+                </div>
+            </div>
             <main class="grid">
-
                 <section class="card col-left">
-                    <div class="controls-buttons">
-                        <div class=" controls-buttons-left">
-                        </div>
-                        <div class="controls-buttons-right">
-                            <div>
-                                <label class="file-btn" title="Carregar CSV local">
-                                    <input id="csvFile" type="file" accept=".csv,text/csv" />
-                                    <span class="material-symbols-outlined">file_open</span>
-                                </label>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined" onclick="showFilters()"
-                                    title="Filtro">filter_alt</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="controls-prover" class="controls" style="display: none;">
-                        <div class="filters">
-                            <div>
-                                <label class="lbl">Área (multiseleção)</label>
-                                <select id="areaSelect" class="select" multiple></select>
-                            </div>
-
-                            <div>
-                                <label class="lbl">Pilar (multiseleção)</label>
-                                <select id="pilarSelect" class="select" multiple></select>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row-top">
                         <div class="big-number">
                             <div class="num" id="totalUnique">0</div>
@@ -106,65 +105,54 @@
                         <div class="chart-wrap scrollable" id="barFuncao"></div>
                     </div>
                 </section>
-
-                <!-- <section class="card">
-                    <div class="summary-header"  style="display: none;">
-                        <div class="title">Resumo por Função e Área</div>
-                        <div class="filter-label">Filtro aplicado: <span id="appliedFilters">Nenhum</span></div>
-                    </div>
-
-                    <div class="summary-grid"  style="display: none;">
-                        <div class="summary-col">
-                            <div class="summary-title">Top Funções</div>
-                            <div class="small-list" id="listFuncao"></div>
-                        </div>
-
-                        <div class="summary-col">
-                            <div class="summary-title">Top Áreas</div>
-                            <div class="small-list" id="listArea"></div>
-                        </div>
-                    </div>
-
-                    <footer class="note">---
-                    </footer>
-                </section> -->
             </main>
         </div>
         <!-- Home final -->
         <!-- Entradas inicial -->
         <div id="pp-entradas">
-            <main class="grid">
+            <div class="controls-buttons">
+                <div class=" controls-buttons-left">
+                    <p>ENTRADAS</p>
+                </div>
+                <div class="controls-buttons-right">
+                    <div>
+                        <label class="file-btn" title="Carregar CSV local">
+                            <input id="csvFileEntradas" type="file" accept=".csv,text/csv" />
+                            <span class="material-symbols-outlined">file_open</span>
+                        </label>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined" onclick="showFilterEntradass()"
+                            title="Filtro">filter_alt</span>
+                    </div>
+                </div>
+            </div>
+            <div id="controls-entradas" class="controls" style="display: none;">
+                <div class="filters">
+                    <div>
+                        <label class="lbl">Data início</label>
+                        <select id="dateStartEntradas" class="select"></select>
+                    </div>
+                    <div>
+                        <label class="lbl">Data fim</label>
+                        <select id="dateEndEntradas" class="select"></select>
+                    </div>
+
+                    <div>
+                        <label class="lbl">Área (multiseleção)</label>
+                        <select id="areaSelectEntradas" class="select" multiple></select>
+                    </div>
+
+                    <div>
+                        <label class="lbl">Escala (multiseleção)</label>
+                        <select id="campusSelectEntradas" class="select" multiple></select>
+                    </div>
+                </div>
+            </div>
+            <main class="grid2">
 
                 <section class="card col-left">
-                    <div class="controls-buttons">
-                        <div class=" controls-buttons-left">
-                        </div>
-                        <div class="controls-buttons-right">
-                            <div>
-                                <label class="file-btn" title="Carregar CSV local">
-                                    <input id="csvFileEntradas" type="file" accept=".csv,text/csv" />
-                                    <span class="material-symbols-outlined">file_open</span>
-                                </label>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined" onclick="showFilterEntradass()"
-                                    title="Filtro">filter_alt</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="controls-entradas" class="controls" style="display: none;">
-                        <div class="filters">
-                            <div>
-                                <label class="lbl">Área (multiseleção)</label>
-                                <select id="areaSelectEntradas" class="select" multiple></select>
-                            </div>
 
-                            <div>
-                                <label class="lbl">Escala (multiseleção)</label>
-                                <select id="campusSelectEntradas" class="select" multiple></select>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row-top">
                         <div class="big-number">
                             <div class="num" id="totalEntradas">0</div>
@@ -194,6 +182,11 @@
                 <section class="card">
                     <div class="row-charts">
                         <div class="chart-wrap scrollable" id="barFaixaEtariaEntrada"></div>
+                    </div>
+                </section>                
+                <section class="card">
+                    <div class="row-charts">
+                        <div class="chart-wrap scrollable" id="lineDataReferenciaEntrada"></div>
                     </div>
                 </section>
             </main>

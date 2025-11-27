@@ -7,7 +7,7 @@
   - defaultCsvEntradasUrl: caminho local passado (do histórico). Edite se necessário.
 */
 
-const defaultCsvEntradasUrl = 'csv/pp-v-Entradas-s.csv'; // <-- substitua pelo CSV real se quiser
+const defaultCsvEntradasUrl = 'csv/pp-v-entradas-s.csv'; // <-- substitua pelo CSV real se quiser
 
 // Nota: por instrução, este caminho foi inserido. Use botão "Carregar CSV" para enviar o arquivo CSV real.
 
@@ -18,15 +18,13 @@ const totalEntradas = document.getElementById('totalEntradas');
 
 const areaSelectEntradas = document.getElementById('areaSelectEntradas');
 const campusSelectEntradas = document.getElementById('campusSelectEntradas');
-
-
-// TODO: configurar esse id 
-const controlsEntradas = document.getElementById('controls-Entradas'); 
-
+const dateStartEntradas = document.getElementById('dateStartEntradas');
+const dateEndEntradas = document.getElementById('dateEndEntradas');
+const controlsEntradas = document.getElementById('controls-entradas'); 
 
 let showFilterEntradas = false;
 
-function showFilterEntradas(){
+function showFilterEntradass(){
 
     if(showFilterEntradas){
         controlsEntradas.style.display = 'none';
@@ -89,10 +87,83 @@ function normalizeRowEntradas(row){
   };
 }
 
+function formatMonthLabel(iso){ // iso 'yyyy-mm-dd' -> 'mmm/yyyy' pt-BR
+  if(!iso) return '';
+  const [y,m] = iso.split('-');
+  // Cria a data usando o dia 2 para evitar problemas de fuso horário na virada do mês
+  const date = new Date(`${y}-${m}-02`); 
+  return date.toLocaleString('pt-BR',{month:'short', year:'numeric'});
+}
+
+// A função deve obter as referências dos elementos que serão manipulados
 function initAfterLoadEntradas(){
-  // populate selects
+  // 1. OBTENÇÃO DOS ELEMENTOS (CRUCIAL para evitar TypeError)
+  const areaSelectEntradas = document.getElementById('areaSelectEntradas');
+  const campusSelectEntradas = document.getElementById('campusSelectEntradas');
+  
+  // Novos campos de data
+  const dateStartEntradas = document.getElementById('dateStartEntradas');
+  const dateEndEntradas = document.getElementById('dateEndEntradas');
+
+  if (!areaSelectEntradas || !campusSelectEntradas || !dateStartEntradas || !dateEndEntradas) {
+    console.error("Erro: Um ou mais elementos SELECT não foram encontrados no DOM.");
+    return;
+  }
+  
+  // 2. POPULAR SELECTS E TRATAMENTO DE DADOS
+
+  // Popula os arrays de áreas e campus (como no seu código original)
   const areas = Array.from(new Set(rawDataEntradas.map(r=>r.area || 'Não informado'))).filter(Boolean).sort();
   const campus = Array.from(new Set(rawDataEntradas.map(r=>r.campus || 'Não informado'))).filter(Boolean).sort();
+  
+  // Trata e ordena as datas
+  const allDates = Array.from(new Set(rawDataEntradas.map(r=>r.dataReferencia || 'Não informado'))).filter(Boolean);
+  
+  // Ordena as datas cronologicamente (de mais antiga para mais nova)
+  const sortedDatesAsc = allDates.sort((a, b) => new Date(a) - new Date(b));
+  
+  // A data inicial (mais antiga) será o primeiro elemento
+  const minDate = sortedDatesAsc[0]; 
+  // A data final (mais recente) será o último elemento
+  const maxDate = sortedDatesAsc[sortedDatesAsc.length - 1]; 
+
+  // --- LÓGICA PARA POPULAR DATA INÍCIO E DATA FIM ---
+  
+  // 3. POPULAR COMBOS DE DATA
+  
+  dateStartEntradas.innerHTML = '';
+  dateEndEntradas.innerHTML = '';
+
+  sortedDatesAsc.forEach(date => {
+    // Aplica a função de formatação para o texto exibido
+    const formattedText = formatMonthLabel(date); 
+    
+    // Cria options para a data inicial
+    const optStart = document.createElement('option');
+    optStart.value = date;             // Mantém 'yyyy-mm-dd' no VALUE
+    optStart.innerText = formattedText; // Exibe 'mmm/yyyy'
+    dateStartEntradas.appendChild(optStart);
+    
+    // Cria options para a data final
+    const optEnd = document.createElement('option');
+    optEnd.value = date;             // Mantém 'yyyy-mm-dd' no VALUE
+    optEnd.innerText = formattedText; // Exibe 'mmm/yyyy'
+    dateEndEntradas.appendChild(optEnd);
+  });
+  
+  // 4. SETAR VALORES DEFAULT
+  
+  // Data Inicial (dateStartEntradas): Seta para a data mais antiga
+  if (minDate) {
+    dateStartEntradas.value = minDate;
+  }
+
+  // Data Final (dateEndEntradas): Seta para a data mais recente
+  if (maxDate) {
+    dateEndEntradas.value = maxDate;
+  }
+  
+  // --- RESTO DO CÓDIGO (ÁREA E CAMPUS) ---
 
   // areaSelectEntradas: add "Selecionar tudo" as first option
   areaSelectEntradas.innerHTML = '';
@@ -130,7 +201,12 @@ function initAfterLoadEntradas(){
     campusSelectEntradas.options[i].selected = true;
   }
 
-  // listeners
+  // 5. LISTENERS
+  
+  // Adiciona listeners para os novos combos de data
+  dateStartEntradas.addEventListener('change', onFilterChangeEntradas);
+  dateEndEntradas.addEventListener('change', onFilterChangeEntradas);
+  
   areaSelectEntradas.addEventListener('change', onFilterChangeEntradas);
   campusSelectEntradas.addEventListener('change', onFilterChangeEntradas);
 
@@ -178,23 +254,55 @@ function onFilterChangeEntradas() {
 
 
 function applyFiltersAndUpdateEntradas(){
+  // 1. OBTENÇÃO DOS FILTROS
+
+  // Filtros de Data (obtidos do value, que é 'AAAA-MM-DD')
+  const startDate = dateStartEntradas.value; 
+  const endDate = dateEndEntradas.value;
+
+  // Converte as datas para timestamps para facilitar a comparação.
+  // Usamos 'T00:00:00' para garantir que a data inicial comece no início do dia.
+  // ATENÇÃO: Se as datas de referência no rawDataEntradas tiverem horário, você precisa ajustar a comparação.
+  const startTimestamp = new Date(startDate + 'T00:00:00').getTime();
+  const endTimestamp = new Date(endDate + 'T00:00:00').getTime(); 
+
+  // Filtros de Multi-Seleção
   const selectedAreas = Array.from(areaSelectEntradas.selectedOptions).map(o=>o.value).filter(v=>v!=='__ALL__');
-//   const selectedcampus = campusSelectEntradas.value;
   const selectedcampuses = Array.from(campusSelectEntradas.selectedOptions)
     .map(o => o.value)
     .filter(v => v !== '__ALL__');
 
+  // 2. APLICAÇÃO DO FILTRO
   filteredDataEntradas = rawDataEntradas.filter(r=>{
+    
+    // --- FILTRO DE DATAS ---
+    // Cria o timestamp da data de referência do item atual
+    const itemDateTimestamp = new Date(r.dataReferencia + 'T00:00:00').getTime();
+    
+    // Verifica se a data do item está DENTRO do intervalo: start <= item <= end
+    const dateOk = itemDateTimestamp >= startTimestamp && itemDateTimestamp <= endTimestamp;
+
+    // Se o item não estiver no intervalo de data, ele é descartado imediatamente
+    if (!dateOk) return false;
+
+    // --- FILTRO DE ÁREA ---
     const areaOk = selectedAreas.length===0 ? true : selectedAreas.includes((r.area||'').toString());
+    
+    // --- FILTRO DE CAMPUS ---
     const campusOk = selectedcampuses.length === 0
         ? true
         : selectedcampuses.includes((r.campus || '').toString());
+        
+    // O item deve passar pelos filtros de área e campus
     return areaOk && campusOk;
   });
 
-  // update applied filters text
+  // 3. ATUALIZAÇÃO DO TEXTO (Opcional, se o texto de campus precisar ser ajustado)
   const aText = selectedAreas.length ? selectedAreas.join(', ') : 'Todas';
   const pText = selectedcampuses.length ? selectedcampuses.join(', ') : 'Todos';
+  
+  // Se você tiver um elemento para exibir o intervalo de data:
+  // Exemplo: const dText = `${startDate} até ${endDate}`; 
 
   updateCountsAndChartsEntradas();
 }
@@ -227,7 +335,7 @@ function groupCountEntradas(array, key){
  * @param {string} countKey - A chave para contar os únicos (ex: 'voluntarioId').
  * @returns {Array<[string, number]>} Um array de arrays [label, count].
  */
-function groupCountEntradasUnique(data, groupKey, countKey) {
+function groupCountEntradasUnique(data, groupKey, countKey, orderBy = null) {
   const groups = new Map();
 
   // 1. Agrupar e coletar todos os valores da countKey (voluntarioId) por groupKey
@@ -253,15 +361,17 @@ function groupCountEntradasUnique(data, groupKey, countKey) {
 
   // Opcional: Ordenar por contagem decrescente
   result.sort((a, b) => b[1] - a[1]); 
+  if(orderBy) result.sort((a, b) => a[0].localeCompare(b[0]));
 
   return result;
 }
 
 /* Charts objects */
-let donutCampusEntradasChart = null;
-let donutSexoEntradasChart = null;
-let barAreaEntradasChart = null;
-let barFaixaEtariaEntradasChart = null;
+let donutCampusEntradaChart = null;
+let donutSexoEntradaChart = null;
+let barAreaEntradaChart = null;
+let barFaixaEtariaEntradaChart = null;
+let lineDataReferenciaEntradaChart = null;
 
 function updateCountsAndChartsEntradas(){
   // big number: unique voluntarioId in filteredDataEntradas (but we should count unique in whole source or filtered? requirement: "contar todos voluntarioId do arquivo .csv ... tirar duplicados" -> count across file. We'll show count across currently filtered set? The requirement asked big number to display total of people counting all volunteer IDs from CSV removing duplicates. We'll display the count on the CURRENT FILTERED dataset but keep a note: we'll show both: default show unique total of ALL and filtered below)
@@ -293,17 +403,17 @@ function updateCountsAndChartsEntradas(){
   const faixaEtariaSeries = faixaEtariaCounts.map(x=>x[1]);
 
   // Line - by area (DEVE CONTAR VOLUNTARIOID ÚNICOS POR dataReferencia)
-  const dataReferenciaCounts = groupCountEntradasUnique(filteredDataEntradas, 'dataReferencia', 'voluntarioId');
+  const dataReferenciaCounts = groupCountEntradasUnique(filteredDataEntradas, 'dataReferencia', 'voluntarioId', '0-asc');
   const dataReferenciaLabels = dataReferenciaCounts.map(x=>x[0]);
   const dataReferenciaSeries = dataReferenciaCounts.map(x=>x[1]);
 
 
   // Render charts (create if null)
-  renderDonutEntradas('donutCampusEntradas', campusLabels, campusSeries, 'Escala');
-  renderDonutEntradas('donutSexoEntradas', sexoLabels, sexoSeries, 'Gênero');
-  renderBarEntradas('barAreaEntradas', areaLabels, areaSeries, 'Áreas');
-  renderBarEntradas('barFaixaEtariaEntradas', faixaEtariaLabels, faixaEtariaSeries, 'Faixa Etária');
-  // renderLineEntradas('lineDataReferenciaEntradas', dataReferenciaLabels, dataReferenciaSeries, 'Data de Referência');
+  renderDonutEntrada('donutCampusEntrada', campusLabels, campusSeries, 'Escala');
+  renderDonutEntrada('donutSexoEntrada', sexoLabels, sexoSeries, 'Gênero');
+  renderBarEntrada('barAreaEntrada', areaLabels, areaSeries, 'Áreas');
+  renderBarEntrada('barFaixaEtariaEntrada', faixaEtariaLabels, faixaEtariaSeries, 'Faixa Etária');
+  renderLineEntrada('lineDataReferenciaEntrada', dataReferenciaLabels, dataReferenciaSeries, 'Mês');
 }
 
 /* render helpers */
@@ -326,7 +436,7 @@ function escapeHtml(s){
 }
 
 /* ApexCharts renderers */
-function renderDonutEntradas(elId, labels, series, title){
+function renderDonutEntrada(elId, labels, series, title){
   const el = document.getElementById(elId);
   if(!el) return;
 
@@ -369,23 +479,22 @@ function renderDonutEntradas(elId, labels, series, title){
     responsive: [{ breakpoint:600, options:{ legend:{show:false} } }]
   };
 
-  if(donutCampusEntradasChart && elId==='donutCampusEntradas'){
-    donutCampusEntradasChart.updateOptions({...options, series});
+  if(donutCampusEntradaChart && elId==='donutCampusEntrada'){
+    donutCampusEntradaChart.updateOptions({...options, series});
   } else {
-    if(elId==='donutCampusEntradas'){ donutCampusEntradasChart = new ApexCharts(el, options); donutCampusEntradasChart.render(); }
+    if(elId==='donutCampusEntrada'){ donutCampusEntradaChart = new ApexCharts(el, options); donutCampusEntradaChart.render(); }
   }
 
-  if(donutSexoEntradasChart && elId==='donutSexoEntradas'){
-    donutSexoEntradasChart.updateOptions({...options, series});
+  if(donutSexoEntradaChart && elId==='donutSexoEntrada'){
+    donutSexoEntradaChart.updateOptions({...options, series});
   } else {
-    if(elId==='donutSexoEntradas'){ donutSexoEntradasChart = new ApexCharts(el, options); donutSexoEntradasChart.render(); }
+    if(elId==='donutSexoEntrada'){ donutSexoEntradaChart = new ApexCharts(el, options); donutSexoEntradaChart.render(); }
   }
 }
 
 
-function renderBarEntradas(elId, labels, series, title){
+function renderBarEntrada(elId, labels, series, title){
   const el = document.getElementById(elId);
-
   if(!el) return;
   const options = {
     chart: { type:'bar', toolbar:{show:false}, animations:{enabled:true} },
@@ -404,25 +513,61 @@ function renderBarEntradas(elId, labels, series, title){
     title: { text: `Entradas por ${title}`, style:{color: 'var(--muted)'} },
     colors: undefined,
   };
-  if(elId === 'barAreaEntradas') options.chart.height = 100 + 25 * labels.length;
-  if(elId === 'barFaixaEtariaEntradas') options.chart.height = 100 + 25 * labels.length;
-  // if(elId === 'barFaixaEtariaEntradas'){  options.series[0].name='Faixa Etária'; }
-  if(barAreaEntradasChart && elId==='barAreaEntradas'){ barAreaEntradasChart.updateOptions({...options}); }
-  else if(barFaixaEtariaEntradasChart && elId==='barFaixaEtariaEntradas'){ barFaixaEtariaEntradasChart.updateOptions({...options}); }
+  if(elId === 'barAreaEntrada') options.chart.height = 100 + 25 * labels.length;
+  if(elId === 'barFaixaEtariaEntrada') options.chart.height = 100 + 25 * labels.length;
+  // if(elId === 'barFaixaEtariaEntrada'){  options.series[0].name='Faixa Etária'; }
+  if(barAreaEntradaChart && elId==='barAreaEntrada'){ barAreaEntradaChart.updateOptions({...options}); }
+  else if(barFaixaEtariaEntradaChart && elId==='barFaixaEtariaEntrada'){ barFaixaEtariaEntradaChart.updateOptions({...options}); }
   else {
-    if(elId==='barAreaEntradas'){ barAreaEntradasChart = new ApexCharts(el, options); barAreaEntradasChart.render(); }
-    if(elId==='barFaixaEtariaEntradas'){ barFaixaEtariaEntradasChart = new ApexCharts(el, options); barFaixaEtariaEntradasChart.render(); }
+    if(elId==='barAreaEntrada'){ barAreaEntradaChart = new ApexCharts(el, options); barAreaEntradaChart.render(); }
+    if(elId==='barFaixaEtariaEntrada'){ barFaixaEtariaEntradaChart = new ApexCharts(el, options); barFaixaEtariaEntradaChart.render(); }
+  }
+}
+
+function renderLineEntrada(elId, labels, series, title){
+
+  console.log(labels);
+
+  for(let i=0;i<labels.length;i++){
+    labels[i] = formatMonthLabel(labels[i]);
+  }
+
+  console.log(labels);
+
+  const el = document.getElementById(elId);
+  if(!el) return;
+  
+  const options = {
+    chart:{ type:'line', toolbar:{show:false}, zoom:{enabled:false} },
+    series:[{ name: title, data: series }], 
+    xaxis:{ categories: labels, labels:{ style:{ colors: labels.map(()=> 'var(--text)') } } },
+    yaxis:{ labels:{ style:{ colors: ['var(--text)'] } } },
+    dataLabels:{ enabled:false },
+    stroke:{ curve:'smooth' },
+    tooltip:{ theme:'dark' },
+    title:{ text:`Entradas por ${title}`, style:{ color:'var(--muted)'} },
+  };
+  
+  if(lineDataReferenciaEntradaChart) {
+    // 💡 CORREÇÃO APLICADA: Passe o objeto options completo, sem sobrescrever series
+    lineDataReferenciaEntradaChart.updateOptions(options, false, true); 
+    // O segundo 'false' e o terceiro 'true' são opcionais, 
+    // mas indicam que não queremos resetar o zoom e queremos redesenhar.
+  }
+  else { 
+    lineDataReferenciaEntradaChart = new ApexCharts(el, options); 
+    lineDataReferenciaEntradaChart.render(); 
   }
 }
 
 /* initial placeholder to avoid empty visuals */
 function setupPlaceholders(){
   // placeholder empty charts
-  renderDonutEntradas('donutCampusEntradas', ['...'], [0], 'Escala');
-  renderDonutEntradas('donutSexoEntradas', ['...'], [0], 'Gênero');
-  renderBarEntradas('barAreaEntradas', ['...'], [0], 'Áreas');
-  renderBarEntradas('barFaixaEtariaEntradas', ['...'], [0], 'Faixa Etária');
-  // renderLineEntradas('lineDataReferenciaEntradas', ['...'], [0], 'Data de Referência');
+  renderDonutEntrada('donutCampusEntrada', ['...'], [0], 'Escala');
+  renderDonutEntrada('donutSexoEntrada', ['...'], [0], 'Gênero');
+  renderBarEntrada('barAreaEntrada', ['...'], [0], 'Áreas');
+  renderBarEntrada('barFaixaEtariaEntrada', ['...'], [0], 'Faixa Etária');
+  renderLineEntrada('lineDataReferenciaEntrada', ['...'], [0], 'Mês');
 }
 setupPlaceholders();
 
