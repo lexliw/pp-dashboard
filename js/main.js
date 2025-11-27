@@ -8,6 +8,7 @@
 */
 
 const defaultCsvUrl = 'csv/pp-v-prover-s.csv'; // <-- substitua pelo CSV real se quiser
+
 // Nota: por instrução, este caminho foi inserido. Use botão "Carregar CSV" para enviar o arquivo CSV real.
 
 let rawData = []; // array of rows as objects
@@ -16,13 +17,12 @@ let filteredData = [];
 const totalUniqueEl = document.getElementById('totalUnique');
 const areaSelect = document.getElementById('areaSelect');
 const pilarSelect = document.getElementById('pilarSelect');
-const appliedFiltersEl = document.getElementById('appliedFilters');
 
-const listFuncao = document.getElementById('listFuncao');
-const listArea = document.getElementById('listArea');
+// const appliedFiltersEl = document.getElementById('appliedFilters');
+// const listFuncao = document.getElementById('listFuncao');
+// const listArea = document.getElementById('listArea');
 
 const controlsProver = document.getElementById('controls-prover');
-
 const ppHome = document.getElementById('pp-home');
 const ppEntradas = document.getElementById('pp-entradas');
 const ppSaidas = document.getElementById('pp-saidas');
@@ -50,7 +50,6 @@ function changePage(page){
     btnHome.style.background='rgba(255, 255, 255, 0.03)';
     btnInput.style.background='rgba(255, 255, 255, 0.03)';
     btnOutput.style.background='rgba(255, 255, 255, 0.03)';
-
     if(page==='home'){
         ppHome.style.display = 'block';
         btnHome.style.background='rgba(255, 255, 255, 0.40)';
@@ -61,7 +60,6 @@ function changePage(page){
         ppSaidas.style.display = 'block';
         btnOutput.style.background='rgba(255, 255, 255, 0.40)';
     }
-
 }
 
 function showFilters(){
@@ -232,7 +230,7 @@ function applyFiltersAndUpdate(){
   // update applied filters text
   const aText = selectedAreas.length ? selectedAreas.join(', ') : 'Todas';
   const pText = selectedPilares.length ? selectedPilares.join(', ') : 'Todos';
-  appliedFiltersEl.innerText = `Área: ${aText} • Pilar: ${pText}`;
+  // appliedFiltersEl.innerText = `Área: ${aText} • Pilar: ${pText}`;
 
   updateCountsAndCharts();
 }
@@ -325,8 +323,8 @@ function updateCountsAndCharts(){
   const funcaoSeries = funcaoCounts.map(x=>x[1]);
 
   // update lists top 10
-  renderList(listFuncao, funcaoCounts.slice(0,20));
-  renderList(listArea, areaCounts.slice(0,20));
+  // renderList(listFuncao, funcaoCounts.slice(0,20));
+  // renderList(listArea, areaCounts.slice(0,20));
 
   // Render charts (create if null)
   renderDonut('donutPilar', pilarLabels, pilarSeries);
@@ -379,8 +377,6 @@ function renderDonut(elId, labels, series){
     chart: { type:'donut', toolbar:{show:false}, animations:{enabled:true} },
     series: series,
     labels: labels,
-
-    // 🎯 ESSENCIAL para corrigir contraste da legenda
     colors: colors,
 
     legend: {

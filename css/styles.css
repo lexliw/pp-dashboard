@@ -108,7 +108,7 @@ select[multiple]{
 /* Grid layout */
 .grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
   gap:18px;
 }
 
@@ -269,8 +269,9 @@ select[multiple]::-webkit-scrollbar-thumb{
 }
 
 .scrollable {
-  max-height: 320px !important; /* Limita a altura do box do gráfico */
+  max-height: 350px !important; /* Limita a altura do box do gráfico */
   overflow-y: auto !important;  /* Adiciona a barra de rolagem vertical */
   overflow-x: hidden; /* Opcional: Garante que não haja scroll horizontal */
   padding: 5px; /* Opcional: Adiciona um pequeno padding interno para o scrollbar não ficar colado */
 }
+

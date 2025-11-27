@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Entradas - Áreas / Demografia</title>
+
+  <!-- ApexCharts + PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    :root{
+      --accent: rgb(61,174,171);
+      --bg-dark:#041613;
+      --panel:#0b2b27;
+      --panel-2:#072e2b;
+      --text:#e6fbf9;
+      --muted:#b8dcd9;
+      --card-radius:12px;
+    }
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,#041613 0%, #072e2b 60%);color:var(--text);}
+    .container{max-width:1200px;margin:18px auto;padding:18px;box-sizing:border-box;}
+    header{display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--panel),var(--panel-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 4px 14px rgba(0,0,0,0.6)}
+    h1{margin:0;font-size:20px}
+    .controls{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .file-btn, .btn, select, input[type=date]{
+      background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;color:var(--text);font-size:14px;
+    }
+    .file-btn input[type=file]{display:none}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, rgba(6,33,31,0.85), rgba(4,20,19,0.6));border-radius:var(--card-radius);padding:14px;box-shadow:0 8px 20px rgba(0,0,0,0.6)}
+    .big-number{display:flex;flex-direction:column;gap:6px}
+    .big-number .num{font-size:56px;font-weight:800;color:var(--accent)}
+    .small{height:220px;max-height:220px;overflow:auto}
+    .chart-wrap{height:320px;max-height:320px;overflow-y:auto}
+    /* garantir que apex não "vaze" e que o SVG respeite o container */
+    .chart-wrap .apexcharts-canvas{max-height:100% !important;overflow:auto !important}
+    .filters{display:flex;gap:10px;align-items:center}
+    select[multiple]{min-width:180px;height:110px}
+    .row{display:flex;gap:12px;align-items:center}
+    .label-muted{color:var(--muted);font-size:13px}
+    .list{max-height:300px;overflow:auto;margin-top:10px;padding-right:6px}
+    .list .row-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02);font-size:13px}
+    footer{color:var(--muted);font-size:13px;text-align:right;margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Z</div>
+      <div>
+        <h1>DASHBOARD - Entradas & Demografia</h1>
+        <div class="label-muted">Interativo • Baseado em CSV • Tema escuro</div>
+      </div>
+
+      <div class="controls">
+        <label class="file-btn" title="Carregar CSV local">
+          <input id="csvFile" type="file" accept=".csv,text/csv" />
+          Carregar CSV
+        </label>
+
+        <button id="btnLoadDefault" class="btn">Carregar CSV padrão</button>
+
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="label-muted">Data início</div>
+          <input id="dateStart" type="date" />
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="label-muted">Data fim</div>
+          <input id="dateEnd" type="date" />
+        </div>
+
+        <div style="display:flex;flex-direction:column;">
+          <div class="label-muted">Área (multiseleção)</div>
+          <select id="areaSelect" multiple></select>
+        </div>
+
+        <div style="display:flex;flex-direction:column;">
+          <div class="label-muted">Campus (multiseleção)</div>
+          <select id="campusSelect" multiple></select>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- left column -->
+      <section class="card">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px">
+            <div class="big-number">
+              <div id="totalUnique" class="num">0</div>
+              <div class="label-muted">CONTAGEM DE NOVOS VOLUNTÁRIOS (únicos no período)</div>
+            </div>
+          </div>
+
+          <div style="width:320px;min-width:240px">
+            <div id="donutSexo" class="chart-wrap small"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:300px" class="chart-wrap scrollable" id="barArea"></div>
+          <div style="flex:1;min-width:300px" class="chart-wrap scrollable" id="barAge"></div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:480px" class="chart-wrap scrollable" id="lineMonths"></div>
+          <div style="flex:1;min-width:300px" class="chart-wrap scrollable" id="barCampus"></div>
+        </div>
+      </section>
+
+      <!-- right column lists -->
+      <section class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-weight:700">Detalhes</div>
+          <div class="label-muted">Filtro aplicado: <span id="appliedFilters">Nenhum</span></div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:250px">
+            <div class="label-muted">Top Áreas</div>
+            <div id="listArea" class="list"></div>
+          </div>
+
+          <div style="flex:1;min-width:250px">
+            <div class="label-muted">Top Campi</div>
+            <div id="listCampus" class="list"></div>
+          </div>
+        </div>
+
+        <footer>Use o controle de datas e filtros para ajustar o período e as seleções.</footer>
+      </section>
+    </main>
+  </div>
+
+<script>
+/* ---------- CONFIG ---------- */
+const defaultCsvUrl = 'pp-v-entradas-s.csv'; // altere para seu CSV padrão se quiser
+
+/* ---------- STATE ---------- */
+let rawData = [];         // rows normalized
+let filteredData = [];    // after applying filters
+let uniqueDates = [];     // sorted unique dataReferencia dates (ISO)
+let charts = {};          // store ApexCharts instances
+
+/* ---------- DOM ---------- */
+const csvFile = document.getElementById('csvFile');
+const btnLoadDefault = document.getElementById('btnLoadDefault');
+const dateStartInput = document.getElementById('dateStart');
+const dateEndInput = document.getElementById('dateEnd');
+const areaSelect = document.getElementById('areaSelect');
+const campusSelect = document.getElementById('campusSelect');
+const totalUniqueEl = document.getElementById('totalUnique');
+const appliedFiltersEl = document.getElementById('appliedFilters');
+const listArea = document.getElementById('listArea');
+const listCampus = document.getElementById('listCampus');
+
+/* ---------- HELPERS ---------- */
+function normalizeRow(row){
+  const map = {};
+  for(const k of Object.keys(row)){
+    const key = k.trim().toLowerCase();
+    map[key] = row[k] != null ? String(row[k]).trim() : '';
+  }
+  // return normalized object with expected keys
+  return {
+    dataReferencia: map['datareferencia'] ?? map['data'] ?? '',
+    sexo: map['sexo'] ?? '',
+    idade: map['idade'] ?? '',
+    area: map['area'] ?? '',
+    campus: map['campus'] ?? '',
+    voluntarioId: map['voluntarioid'] ?? map['voluntárioid'] ?? map['voluntario_id'] ?? ''
+  };
+}
+
+// tenta parsear data em ISO ou dd/mm/yyyy -> retorna ISO yyyy-mm-dd or null
+function parseDateToISO(s){
+  if(!s) return null;
+  s = String(s).trim();
+  // ISO-like?
+  const iso = new Date(s);
+  if(!isNaN(iso.getTime())){
+    // normalize to yyyy-mm-dd
+    const y = iso.getFullYear();
+    const m = String(iso.getMonth()+1).padStart(2,'0');
+    const d = String(iso.getDate()).padStart(2,'0');
+    return `${y}-${m}-${d}`;
+  }
+  // try dd/mm/yyyy
+  const parts = s.split(/[\/\-\.]/).map(p=>p.trim());
+  if(parts.length===3){
+    // assume dd/mm/yyyy
+    let [d,m,y] = parts;
+    if(y.length===2) y = '20'+y;
+    if(d.length===1) d='0'+d;
+    if(m.length===1) m='0'+m;
+    // basic validity
+    const dt = new Date(`${y}-${m}-${d}`);
+    if(!isNaN(dt.getTime())) return `${y}-${m}-${d}`;
+  }
+  return null;
+}
+
+function formatMonthLabel(iso){ // iso 'yyyy-mm-dd' -> 'mmm/yyyy' pt-BR
+  if(!iso) return '';
+  const [y,m] = iso.split('-');
+  const date = new Date(`${y}-${m}-01`);
+  return date.toLocaleString('pt-BR',{month:'short', year:'numeric'});
+}
+
+function uniq(arr){ return Array.from(new Set(arr)); }
+
+function groupCount(array, keyFn){
+  const map = new Map();
+  array.forEach(item=>{
+    const key = keyFn(item);
+    map.set(key, (map.get(key)||0)+1);
+  });
+  return Array.from(map.entries()).sort((a,b)=>b[1]-a[1]);
+}
+
+/* ---------- CSV Loading ---------- */
+csvFile.addEventListener('change', e=>{
+  const f = e.target.files[0]; if(!f) return;
+  Papa.parse(f, { header:true, skipEmptyLines:true, complete: res=>{
+    rawData = res.data.map(normalizeRow).map(r=>{
+      r.isoDate = parseDateToISO(r.dataReferencia);
+      return r;
+    });
+    prepareControlsAndRender();
+  }});
+});
+
+btnLoadDefault.addEventListener('click', ()=>{
+  fetch(defaultCsvUrl).then(r=>{
+    if(!r.ok) throw new Error('Falha ao carregar CSV padrão');
+    return r.text();
+  }).then(txt=>{
+    const res = Papa.parse(txt, { header:true, skipEmptyLines:true });
+    rawData = res.data.map(normalizeRow).map(r=>{
+      r.isoDate = parseDateToISO(r.dataReferencia);
+      return r;
+    });
+    prepareControlsAndRender();
+  }).catch(err=>{
+    alert('Erro ao carregar CSV padrão: ' + err.message + '\nUse Carregar CSV para enviar um arquivo local.');
+    console.error(err);
+  });
+});
+
+/* ---------- Controls population & listeners ---------- */
+function prepareControlsAndRender(){
+  // build unique dates (only rows with valid isoDate)
+  uniqueDates = uniq(rawData.map(r=>r.isoDate).filter(Boolean)).sort();
+  // set min/max on date inputs
+  if(uniqueDates.length){
+    dateStartInput.min = uniqueDates[0];
+    dateStartInput.max = uniqueDates[uniqueDates.length-1];
+    dateEndInput.min = uniqueDates[0];
+    dateEndInput.max = uniqueDates[uniqueDates.length-1];
+    // default: full range
+    dateStartInput.value = uniqueDates[0];
+    dateEndInput.value = uniqueDates[uniqueDates.length-1];
+  }
+
+  // populate areaSelect
+  const areas = uniq(rawData.map(r=> r.area && r.area.trim() ? r.area.trim() : 'Não informado')).sort();
+  areaSelect.innerHTML = '';
+  const aAll = document.createElement('option'); aAll.value='__ALL__'; aAll.innerText='Selecionar tudo'; areaSelect.appendChild(aAll);
+  areas.forEach(a=>{
+    const o = document.createElement('option'); o.value=a; o.innerText=a; areaSelect.appendChild(o);
+  });
+  // select all by default
+  for(let i=0;i<areaSelect.options.length;i++) areaSelect.options[i].selected = true;
+
+  // populate campusSelect (collect tokens splitting on whitespace)
+  const campusTokens = new Set();
+  rawData.forEach(r=>{
+    const c = r.campus && r.campus.trim() ? r.campus.trim() : 'Não informado';
+    if(c === 'Não informado') { campusTokens.add('Não informado'); return; }
+    c.split(/\s+/).forEach(tok=>{
+      if(tok) campusTokens.add(tok);
+    });
+  });
+  const campusArr = Array.from(campusTokens).sort();
+  campusSelect.innerHTML = '';
+  const cAll = document.createElement('option'); cAll.value='__ALL__'; cAll.innerText='Selecionar tudo'; campusSelect.appendChild(cAll);
+  campusArr.forEach(c=>{
+    const o = document.createElement('option'); o.value=c; o.innerText=c; campusSelect.appendChild(o);
+  });
+  for(let i=0;i<campusSelect.options.length;i++) campusSelect.options[i].selected = true;
+
+  // listeners
+  dateStartInput.addEventListener('change', applyFiltersAndUpdate);
+  dateEndInput.addEventListener('change', applyFiltersAndUpdate);
+  areaSelect.addEventListener('change', onAreaChange);
+  campusSelect.addEventListener('change', onCampusChange);
+
+  // initial render
+  applyFiltersAndUpdate();
+}
+
+/* Select all handling (same logic for both selects) */
+function handleSelectAll(selectEl){
+  const optAll = Array.from(selectEl.options).find(o=>o.value==='__ALL__');
+  if(!optAll) return;
+  const selected = Array.from(selectEl.selectedOptions).map(o=>o.value);
+  if(selected.includes('__ALL__')){
+    for(let i=0;i<selectEl.options.length;i++) selectEl.options[i].selected = true;
+  } else if(selected.length===0){
+    for(let i=0;i<selectEl.options.length;i++) selectEl.options[i].selected = true;
+  } else {
+    optAll.selected = false;
+  }
+}
+function onAreaChange(){ handleSelectAll(areaSelect); applyFiltersAndUpdate(); }
+function onCampusChange(){ handleSelectAll(campusSelect); applyFiltersAndUpdate(); }
+
+/* ---------- Filter logic ---------- */
+function applyFiltersAndUpdate(){
+  // date window
+  const start = dateStartInput.value || null;
+  const end = dateEndInput.value || null;
+
+  // selected areas and campus tokens
+  const selectedAreas = Array.from(areaSelect.selectedOptions).map(o=>o.value).filter(v=>v!=='__ALL__');
+  const selectedCampuses = Array.from(campusSelect.selectedOptions).map(o=>o.value).filter(v=>v!=='__ALL__');
+
+  // filter rows by date and area/campus
+  filteredData = rawData.filter(r=>{
+    // date filter: row.isoDate within start..end (inclusive). If row.isoDate is null -> exclude
+    if(!r.isoDate) return false;
+    if(start && r.isoDate < start) return false;
+    if(end && r.isoDate > end) return false;
+
+    // area
+    if(selectedAreas.length>0){
+      const a = r.area && r.area.trim() ? r.area.trim() : 'Não informado';
+      if(!selectedAreas.includes(a)) return false;
+    }
+
+    // campus: we will accept row if ANY of its campus tokens is in selectedCampuses
+    if(selectedCampuses.length>0){
+      const craw = r.campus && r.campus.trim() ? r.campus.trim() : 'Não informado';
+      if(craw === 'Não informado'){
+        if(!selectedCampuses.includes('Não informado')) return false;
+      } else {
+        const toks = craw.split(/\s+/);
+        // row allowed if at least one token is in selectedCampuses
+        const ok = toks.some(t => selectedCampuses.includes(t));
+        if(!ok) return false;
+      }
+    }
+    return true;
+  });
+
+  // update applied filters label
+  const aText = selectedAreas.length ? selectedAreas.join(', ') : 'Todas';
+  const cText = selectedCampuses.length ? selectedCampuses.join(', ') : 'Todas';
+  const dateText = (dateStartInput.value || '') + ' → ' + (dateEndInput.value || '');
+  appliedFiltersEl.innerText = `Datas: ${dateText} • Área: ${aText} • Campus: ${cText}`;
+
+  updateCountsAndCharts();
+}
+
+/* ---------- Counting and bucketing helpers ---------- */
+function uniqueVolunteerCount(rows){
+  const s = new Set();
+  rows.forEach(r=>{
+    const id = (r.voluntarioId||'').toString().trim();
+    if(id) s.add(id);
+  });
+  return s.size;
+}
+
+function bucketAges(rows){
+  const map = new Map();
+  // buckets: 0-4,5-9,...,55-59, 60+
+  rows.forEach(r=>{
+    const raw = (r.idade||'').toString().trim();
+    let key = 'Não informado';
+    if(raw){
+      const n = Number(raw);
+      if(!isNaN(n)){
+        if(n > 60) key = 'Acima de 60 anos';
+        else {
+          const low = Math.floor(n/5)*5;
+          const high = low+5;
+          key = `Entre ${low} e ${high} anos`;
+        }
+      }
+    }
+    map.set(key, (map.get(key)||0)+1);
+  });
+  // ensure consistent order: put "Não informado" last, "Acima de 60 anos" near end, and numeric buckets descending by count
+  const entries = Array.from(map.entries());
+  // custom sort to show higher counts first
+  entries.sort((a,b)=>b[1]-a[1]);
+  return entries;
+}
+
+/* ---------- Charts update ---------- */
+function updateCountsAndCharts(){
+  // big number
+  const uniqueCount = uniqueVolunteerCount(filteredData);
+  totalUniqueEl.innerText = uniqueCount;
+
+  // BAR: Entradas por Área (use 'Não informado' when blank)
+  const areaEntries = groupCount(filteredData, r => (r.area && r.area.trim()) ? r.area.trim() : 'Não informado');
+  renderBar('barArea', areaEntries.map(x=>x[0]), areaEntries.map(x=>x[1]), 'Entradas por Área');
+
+  // BAR: Range de Idade (5 em 5)
+  const ageEntries = bucketAges(filteredData);
+  renderBar('barAge', ageEntries.map(x=>x[0]), ageEntries.map(x=>x[1]), 'Entradas por Faixa Etária');
+
+  // BAR: Entradas por Geracional (campus) - split multi tokens into separate counts
+  const campusCountMap = new Map();
+  filteredData.forEach(r=>{
+    const raw = r.campus && r.campus.trim() ? r.campus.trim() : 'Não informado';
+    if(raw === 'Não informado'){
+      campusCountMap.set('Não informado', (campusCountMap.get('Não informado')||0)+1);
+    } else {
+      const toks = raw.split(/\s+/);
+      toks.forEach(tok=>{
+        if(tok) campusCountMap.set(tok, (campusCountMap.get(tok)||0)+1);
+      });
+    }
+  });
+  const campusEntries = Array.from(campusCountMap.entries()).sort((a,b)=>b[1]-a[1]);
+  renderBar('barCampus', campusEntries.map(x=>x[0]), campusEntries.map(x=>x[1]), 'Entradas por Campus');
+
+  // LINE: Entradas por Mês (based on isoDate)
+  // group by month (yyyy-mm)
+  const monthMap = new Map();
+  filteredData.forEach(r=>{
+    if(!r.isoDate) return;
+    const ym = r.isoDate.slice(0,7); // yyyy-mm
+    monthMap.set(ym, (monthMap.get(ym)||0) + 1);
+  });
+  // sort by month ascending
+  const monthEntries = Array.from(monthMap.entries()).sort((a,b)=> a[0].localeCompare(b[0]) );
+  renderLine('lineMonths', monthEntries.map(x=>formatMonthLabel(x[0]+'-01')), monthEntries.map(x=>x[1]), 'Entradas por Mês');
+
+  // DONUT: sexo (F -> Feminino, M -> Masculino, blank -> Não informado)
+  const sexoMap = new Map();
+  filteredData.forEach(r=>{
+    const s = (r.sexo||'').toUpperCase().trim();
+    let label = 'Não informado';
+    if(s === 'F') label = 'Feminino';
+    else if(s === 'M') label = 'Masculino';
+    sexoMap.set(label, (sexoMap.get(label)||0)+1);
+  });
+  const sexoEntries = Array.from(sexoMap.entries()).sort((a,b)=>b[1]-a[1]);
+  // donut colors: ensure distinct palette
+  const palette = ['#3DAEAB','#FF6B6B','#4D96FF','#A66CFF','#FFD93D'];
+  renderDonut('donutSexo', sexoEntries.map(x=>x[0]), sexoEntries.map(x=>x[1]), palette);
+
+  // update lists
+  renderList(listArea, areaEntries.slice(0,20));
+  renderList(listCampus, campusEntries.slice(0,20));
+}
+
+/* ---------- Render helpers ---------- */
+function renderList(container, items){
+  container.innerHTML = '';
+  if(items.length === 0){
+    container.innerHTML = '<div style="padding:12px;color:var(--muted)">Sem dados</div>';
+    return;
+  }
+  items.forEach(([label,count])=>{
+    const row = document.createElement('div');
+    row.className = 'row-item';
+    row.innerHTML = `<div style="max-width:75%">${escapeHtml(label)}</div><div style="font-weight:700">${count}</div>`;
+    container.appendChild(row);
+  });
+}
+function escapeHtml(s){ return (s||'').toString().replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+/* ---------- ApexCharts renderers ---------- */
+function renderDonut(elId, labels, series, palette){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  const colors = labels.map((_,i)=> palette[i % palette.length]);
+  const options = {
+    chart:{type:'donut',toolbar:{show:false}},
+    series: series,
+    labels: labels,
+    colors: colors,
+    legend:{ position:'bottom', labels:{ colors: 'var(--text)' }, markers:{ fillColors: colors } },
+    dataLabels:{ enabled:false },
+    tooltip:{ theme:'dark' },
+    title:{ text:'Entradas por Gênero', style:{color:'var(--muted)'} },
+    responsive:[{breakpoint:600, options:{ legend:{position:'bottom'} }}]
+  };
+  if(charts[elId]) charts[elId].updateOptions({...options, series});
+  else { charts[elId] = new ApexCharts(el, options); charts[elId].render(); }
+}
+
+function renderBar(elId, labels, series, title){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  // ensure yaxis label colors (for horizontal bars)
+  const yLabelsColors = labels.map(()=> 'var(--text)');
+  const options = {
+    chart:{ type:'bar', toolbar:{show:false} },
+    plotOptions:{ bar:{ horizontal:true, borderRadius:6, borderRadiusApplication:'end' } },
+    series:[{ name: title, data: series }],
+    xaxis:{ labels:{ style:{ colors: 'var(--text)'} } },
+    yaxis:{ labels:{ style:{ colors: yLabelsColors } }, categories: labels },
+    dataLabels:{ enabled:true },
+    tooltip:{ theme:'dark' },
+    title:{ text:title, style:{ color:'var(--muted)'} },
+    colors: undefined,
+  };
+  // dynamic height based on number of labels (so chart can be tall); the container will show scrollbar if exceed max-height
+  const dynamicHeight = Math.max(200, 30 * labels.length + 60);
+  options.chart.height = dynamicHeight;
+
+  if(charts[elId]) charts[elId].updateOptions({...options, series});
+  else { charts[elId] = new ApexCharts(el, options); charts[elId].render(); }
+}
+
+function renderLine(elId, labels, series, title){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  const options = {
+    chart:{ type:'line', toolbar:{show:false}, zoom:{enabled:false} },
+    series:[{ name: title, data: series }],
+    xaxis:{ categories: labels, labels:{ style:{ colors: labels.map(()=> 'var(--text)') } } },
+    yaxis:{ labels:{ style:{ colors: ['var(--text)'] } } },
+    dataLabels:{ enabled:false },
+    stroke:{ curve:'smooth' },
+    tooltip:{ theme:'dark' },
+    title:{ text:title, style:{ color:'var(--muted)'} },
+  };
+  if(charts[elId]) charts[elId].updateOptions({...options, series});
+  else { charts[elId] = new ApexCharts(el, options); charts[elId].render(); }
+}
+
+/* ---------- initial placeholder charts ---------- */
+function setupPlaceholders(){
+  renderDonut('donutSexo',['...'],[0], ['#3DAEAB','#FF6B6B']);
+  renderBar('barArea',['...'],[0],'Entradas por Área');
+  renderBar('barAge',['...'],[0],'Entradas por Faixa Etária');
+  renderBar('barCampus',['...'],[0],'Entradas por Campus');
+  renderLine('lineMonths',['...'],[0],'Entradas por Mês');
+}
+setupPlaceholders();
+
+</script>
+</body>
+</html>
