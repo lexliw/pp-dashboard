@@ -193,8 +193,101 @@
         </div>
         <!-- Entradas final -->
         <!-- Saidas inicial -->
-        <div id="pp-saidas">
-            <main class="grid">
+       <div id="pp-saidas">
+            <div class="controls-buttons">
+                <div class=" controls-buttons-left">
+                    <p>SAÍDAS</p>
+                </div>
+                <div class="controls-buttons-right">
+                    <div style="display: none;">
+                        <label class="file-btn" title="Carregar CSV local">
+                            <input id="csvFileSaidas" type="file" accept=".csv,text/csv" />
+                            <span class="material-symbols-outlined">file_open</span>
+                        </label>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined" onclick="showFilterSaidass()"
+                            title="Filtro">filter_alt</span>
+                    </div>
+                </div>
+            </div>
+            <div id="controls-saidas" class="controls" style="display: none;">
+                <div class="filters">
+                    <div>
+                        <label class="lbl">Data início</label>
+                        <select id="dateStartSaidas" class="select"></select>
+                    </div>
+                    <div>
+                        <label class="lbl">Data fim</label>
+                        <select id="dateEndSaidas" class="select"></select>
+                    </div>
+
+                    <div>
+                        <label class="lbl">Área (multiseleção)</label>
+                        <select id="areaSelectSaidas" class="select" multiple></select>
+                    </div>
+
+                    <div>
+                        <label class="lbl">Escala (multiseleção)</label>
+                        <select id="localSelectSaidas" class="select" multiple></select>
+                    </div>
+                </div>
+            </div>
+            <main class="grid2">
+
+                <section class="card col-left">
+                    <div class="row-top">
+                        <div class="big-number">
+                            <div class="num" id="totalSaidas">0</div>
+                            <div class="label">NUMERO DE SAÍDAS </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card col-left">
+                    <div class="row-top">
+                        <div class="big-number">
+                            <div class="num" id="mediaTempoSaidas">0</div>
+                            <div class="label">MÉDIA DE TEMPO EM MESES</div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="row-charts">
+                        <div class="chart-wrap scrollable" id="lineMesSaidaSaida"></div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <div class="row-top">
+                        <div class="donut-box">
+                            <div class="chart-wrap small" id="donutLocalSaida"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="row-top">
+                        <div class="donut-box">
+                            <div class="chart-wrap small" id="donutGeneroSaida"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="row-top">
+                        <div class="donut-box">
+                            <div class="chart-wrap small" id="donutTempoServicoSaida"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="row-charts">
+                        <div class="chart-wrap scrollable" id="barAreaSaida"></div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="row-charts">
+                        <div class="chart-wrap scrollable" id="barFaixaEtariaSaida"></div>
+                    </div>
+                </section>                
 
             </main>
         </div>
@@ -204,6 +297,7 @@
     <!-- JS -->
     <script src="js/main.js"></script>
     <script src="js/entradas.js"></script>
+    <script src="js/saidas.js"></script>
 </body>
 
 </html>

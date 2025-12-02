@@ -353,7 +353,7 @@ function escapeHtml(s){
 
 /* ApexCharts renderers */
 function renderDonut(elId, labels, series){
-  const el = document.getElementById(elId);
+   const el = document.getElementById(elId);
   if(!el) return;
 
   // 🎨 Paleta colorida suave e moderna (tons distintos)
@@ -389,9 +389,45 @@ function renderDonut(elId, labels, series){
       }
     },
 
-    dataLabels: { enabled:false },
+    dataLabels: { 
+      enabled: true, // Ativado para mostrar números
+      formatter: function(val, opts) {
+        return opts.w.config.series[opts.seriesIndex]; // Mostra o valor absoluto
+      },
+      style: {
+        fontSize: '14px',
+        fontWeight: 'bold',
+        colors: ['#fff'] // Cor branca para contraste
+      },
+      dropShadow: {
+        enabled: true,
+        blur: 3,
+        opacity: 0.8
+      }
+    },
+
+    plotOptions: {
+      pie: {
+        donut: {
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              label: 'Total',
+              fontSize: '16px',
+              fontWeight: 600,
+              color: 'var(--text)',
+              formatter: function (w) {
+                return w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+              }
+            }
+          }
+        }
+      }
+    },
+
     tooltip: { theme:'dark' },
-    title: { text: 'Quantidade por Pilar', style:{color: 'var(--muted)'} },
+    title: { text: `Quantidade por Pilar`, style:{color: 'var(--muted)'} },
     responsive: [{ breakpoint:600, options:{ legend:{show:false} } }]
   };
 

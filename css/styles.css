@@ -195,7 +195,7 @@ select[multiple]{
 
 /* Charts */
 .chart-wrap{
-  height:320px;
+  height:220px;
   max-height:320px;
   overflow-y:auto;
 }
