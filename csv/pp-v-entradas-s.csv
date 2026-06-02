@@ -29,8 +29,8 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-10-01,M,35.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 35 E 40 ANOS,b76921a63cc4fda97a7953ca4503e9e7
 2025-10-01,F,40.0,OP ACESSIBILIDADE,EKLEKTOS,ENTRE 40 E 45 ANOS,47c33e9b3a73c188b33e7c71b75249fd
 2025-10-01,F,55.0,OP ACESSIBILIDADE,EKLEKTOS,ENTRE 55 E 60 ANOS,d2fb916be09245a7ff2b71a6b5d45ebd
-2025-10-01,F,18.0,OP ACESSIBILIDADE,VOX DOMINGO,ENTRE 15 E 20 ANOS,4e729f34d9d54b0f57e61e45053f1bb0
-2025-10-01,M,25.0,OP ACESSIBILIDADE,VOX DOMINGO,ENTRE 25 E 30 ANOS,2095e8ce7e15f4f4378cc33a79db4ed0
+2025-10-01,F,18.0,OP ACESSIBILIDADE,OUTROS,ENTRE 15 E 20 ANOS,4e729f34d9d54b0f57e61e45053f1bb0
+2025-10-01,M,25.0,OP ACESSIBILIDADE,OUTROS,ENTRE 25 E 30 ANOS,2095e8ce7e15f4f4378cc33a79db4ed0
 2025-10-01,F,40.0,OP APOIO,DOMINGO,ENTRE 40 E 45 ANOS,b680d6ad52f15f3afa5ebbadf5279ff3
 2025-10-01,M,43.0,OP APOIO,DOMINGO,ENTRE 40 E 45 ANOS,85e58efa1feae3a997bba739662b0df2
 2025-10-01,F,28.0,OP APOIO,DOMINGO,ENTRE 25 E 30 ANOS,da6b1ba1da1a32d47297ec742f033910
@@ -92,7 +92,7 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-10-01,M,32.0,OP SEC,DOMINGO,ENTRE 30 E 35 ANOS,361efb3e3bcd1e56a6e67e383ab839e0
 2025-10-01,M,29.0,OP SEC,DOMINGO,ENTRE 25 E 30 ANOS,0d0298e0f2ca4635bbc63b77c2b22d14
 2025-10-01,F,39.0,PP COMUNICAÇÃO,DOMINGO,ENTRE 35 E 40 ANOS,26673c65e38d7b203d6fb25311b646aa
-2025-10-01,F,31.0,PP COMUNICAÇÃO,EKLEKTOS DOMINGO,ENTRE 30 E 35 ANOS,dbb20dd2a731ea13c36c2a283b18a993
+2025-10-01,F,31.0,PP COMUNICAÇÃO,OUTROS,ENTRE 30 E 35 ANOS,dbb20dd2a731ea13c36c2a283b18a993
 2025-10-01,M,24.0,PP COMUNICAÇÃO,VOX,ENTRE 20 E 25 ANOS,f5894b8806d7d92a02adaad1b8f30031
 2025-10-01,M,44.0,PP GERENCIAMENTO,DOMINGO,ENTRE 40 E 45 ANOS,3db36744286b054c8ea488825a813983
 2025-10-01,M,56.0,PP GERENCIAMENTO,DOMINGO,ENTRE 55 E 60 ANOS,aa1b5b2aff24403568fe599a56fa893f
@@ -106,8 +106,8 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-10-01,F,23.0,PP INTEGRACAO,DOMINGO,ENTRE 20 E 25 ANOS,46a7b53dd6660887a04b85691540c4f8
 2025-10-01,F,44.0,PP INTEGRACAO,DOMINGO,ENTRE 40 E 45 ANOS,06d0b7ee527a2cf1821e90d22b7ebbf1
 2025-10-01,F,35.0,PP INTEGRACAO,DOMINGO,ENTRE 35 E 40 ANOS,bcd30e6baa45a26b2714847c08f0280d
-2025-10-01,F,40.0,Não informado,Não informado,ENTRE 40 E 45 ANOS,8ddc3f29941aa091d2fef55f743fd884
-2025-10-01,F,24.0,Não informado,Não informado,ENTRE 20 E 25 ANOS,8c7dbb786301e739d1c17cb0c3ed1616
+2025-10-01,F,40.0,Não informado,OUTROS,ENTRE 40 E 45 ANOS,8ddc3f29941aa091d2fef55f743fd884
+2025-10-01,F,24.0,Não informado,OUTROS,ENTRE 20 E 25 ANOS,8c7dbb786301e739d1c17cb0c3ed1616
 2025-08-01,F,30.0,BACKSTAGE,EKLEKTOS,ENTRE 30 E 35 ANOS,ba185615a3fabf9c8ef6f68215c46b27
 2025-08-01,F,40.0,MM DEVELOPERS,DOMINGO,ENTRE 40 E 45 ANOS,709d373ea5dd5c1e96859ead674b6af4
 2025-08-01,M,34.0,MM DEVELOPERS,DOMINGO,ENTRE 30 E 35 ANOS,f7422e3c5e3ecfb94b71dcd3523724f7
@@ -191,8 +191,8 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-06-01,M,40.0,MM SOM,DOMINGO,ENTRE 40 E 45 ANOS,21c1462fb54bfe463727e3cad03b4640
 2025-06-01,F,21.0,MM SOM,VOX,ENTRE 20 E 25 ANOS,a4a1d3f9cc05da805044030118e31d53
 2025-06-01,M,32.0,MM SOM,DOMINGO,ENTRE 30 E 35 ANOS,38862b1c5af93df06a04b55573ba7216
-2025-06-01,M,35.0,MM SOM,Não informado,ENTRE 35 E 40 ANOS,abf61b3cf479ee60bd6262475ccc5189
-2025-06-01,F,24.0,MM SOM,Não informado,ENTRE 20 E 25 ANOS,f41c712db9567d183485ff810dfb4a7e
+2025-06-01,M,35.0,MM SOM,OUTROS,ENTRE 35 E 40 ANOS,abf61b3cf479ee60bd6262475ccc5189
+2025-06-01,F,24.0,MM SOM,OUTROS,ENTRE 20 E 25 ANOS,f41c712db9567d183485ff810dfb4a7e
 2025-06-01,F,31.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 30 E 35 ANOS,868781a1c633fbe21b02aae5bde9c17b
 2025-06-01,M,31.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 30 E 35 ANOS,1164872ab3b5939bd35866fc8c0c6ef8
 2025-06-01,F,42.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 40 E 45 ANOS,eb9f057f63d15e65276784a3baba854c
@@ -254,9 +254,9 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-06-01,M,25.0,PP INTEGRACAO,VOX,ENTRE 25 E 30 ANOS,988cc1c3ff564cd977fb28b244a9bc90
 2025-06-01,F,36.0,PP INTEGRACAO,DOMINGO,ENTRE 35 E 40 ANOS,1046857552583bbfafd9c17c94d4f179
 2025-06-01,F,34.0,PP INTEGRACAO,EKLEKTOS,ENTRE 30 E 35 ANOS,82ffdc12f8bf1c8afef0283935c470ec
-2025-06-01,F,35.0,Não informado,Não informado,ENTRE 35 E 40 ANOS,8a6373351203d95358aefb535812949a
-2025-06-01,F,28.0,Não informado,Não informado,ENTRE 25 E 30 ANOS,a9d1309553c50427767a48581ac208c9
-2025-06-01,F,34.0,Não informado,Não informado,ENTRE 30 E 35 ANOS,2f7e7f2b9dc4568b1e7343885b846c1e
+2025-06-01,F,35.0,Não informado,OUTROS,ENTRE 35 E 40 ANOS,8a6373351203d95358aefb535812949a
+2025-06-01,F,28.0,Não informado,OUTROS,ENTRE 25 E 30 ANOS,a9d1309553c50427767a48581ac208c9
+2025-06-01,F,34.0,Não informado,OUTROS,ENTRE 30 E 35 ANOS,2f7e7f2b9dc4568b1e7343885b846c1e
 2025-04-01,F,29.0,MM BACKSTAGE,EKLEKTOS,ENTRE 25 E 30 ANOS,5db9287e3bc22c1eefdb24e05a42f9b4
 2025-04-01,F,34.0,MM COMUNICACAO ,DOMINGO,ENTRE 30 E 35 ANOS,964a536801c6526c16314e9646b221d6
 2025-04-01,M,32.0,MM COMUNICACAO ,EKLEKTOS,ENTRE 30 E 35 ANOS,6501ddd83d80a301a8fa31c99b0eebe3
@@ -397,14 +397,14 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2025-02-01,F,27.0,OP RECEPÇÃO,DOMINGO,ENTRE 25 E 30 ANOS,4fc667d96ba55ef39c43d321f24e2024
 2025-02-01,M,24.0,OP RECEPÇÃO,DOMINGO,ENTRE 20 E 25 ANOS,dded4ffa74758715765236a64fc9141f
 2025-02-01,M,44.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 40 E 45 ANOS,766a74d9f5e2c06b3a91ab3e968be037
-2025-02-01,F,34.0,PP GERENCIAMENTO,Não informado,ENTRE 30 E 35 ANOS,d7e3e979603490b81a4907149afbceab
-2025-02-01,F,30.0,PP GERENCIAMENTO,Não informado,ENTRE 30 E 35 ANOS,4799065e883ea5234d449d3714a1cf19
+2025-02-01,F,34.0,PP GERENCIAMENTO,OUTROS,ENTRE 30 E 35 ANOS,d7e3e979603490b81a4907149afbceab
+2025-02-01,F,30.0,PP GERENCIAMENTO,OUTROS,ENTRE 30 E 35 ANOS,4799065e883ea5234d449d3714a1cf19
 2025-02-01,M,31.0,PP GERENCIAMENTO,DOMINGO,ENTRE 30 E 35 ANOS,84ce3dd9fbaf23a8cf9d0fea0c08cf85
-2025-02-01,M,24.0,PP INTEGRACAO,Não informado,ENTRE 20 E 25 ANOS,d73046294257d05a210c7e8206a0ea75
+2025-02-01,M,24.0,PP INTEGRACAO,OUTROS,ENTRE 20 E 25 ANOS,d73046294257d05a210c7e8206a0ea75
 2025-02-01,F,34.0,PP INTEGRACAO,DOMINGO,ENTRE 30 E 35 ANOS,5f7f56adf93158a62d86502d6f7f96ee
 2025-02-01,M,21.0,PP INTEGRACAO,DOMINGO,ENTRE 20 E 25 ANOS,5a47b39c7f84b7bc6321c118f06ec0bf
 2025-02-01,M,28.0,PP INTEGRACAO,DOMINGO,ENTRE 25 E 30 ANOS,1f27715a09acb9b120d69fc563be4881
-2025-02-01,F,19.0,PP INTEGRACAO,Não informado,ENTRE 15 E 20 ANOS,60a8f93641b92be7a2cbb35a28f2fdf7
+2025-02-01,F,19.0,PP INTEGRACAO,OUTROS,ENTRE 15 E 20 ANOS,60a8f93641b92be7a2cbb35a28f2fdf7
 2025-02-01,F,46.0,PP INTEGRACAO,DOMINGO,ENTRE 45 E 50 ANOS,29950c365e1a3223f9eb004f82ce30c2
 2025-02-01,M,45.0,MM COMUNICACAO VOX,EKLEKTOS,ENTRE 45 E 50 ANOS,6bdcaddf2ea125ff05b42ae4b7dd35b8
 2024-12-01,F,35.0,DISPONÍVEL,DOMINGO,ENTRE 35 E 40 ANOS,9172b2310d20ee6dc4e0375fbee4e823
@@ -492,7 +492,7 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2024-10-01,F,26.0,OP APOIO,DOMINGO,ENTRE 25 E 30 ANOS,c4a44e38c608fee4e74fb0b4b2204651
 2024-10-01,M,35.0,OP APOIO,DOMINGO,ENTRE 35 E 40 ANOS,6bb8fbce6330cfe58907997d685292e7
 2024-10-01,F,20.0,PP GERENCIAMENTO,DOMINGO,ENTRE 20 E 25 ANOS,0202996a5f6cd6922188d7997ae9afa4
-2024-10-01,F,20.0,OP APOIO,RISE,ENTRE 20 E 25 ANOS,8c667e51cbba2e80c68187ab98e17f34
+2024-10-01,F,20.0,OP APOIO,OUTROS,ENTRE 20 E 25 ANOS,8c667e51cbba2e80c68187ab98e17f34
 2024-10-01,M,26.0,OP APOIO,EKLEKTOS,ENTRE 25 E 30 ANOS,94997791874b9d485fb6029895bd03fa
 2024-10-01,M,14.0,OP APOIO,DOMINGO,ENTRE 10 E 15 ANOS,8b07b966da0175bf855f7f87bc9331dd
 2024-10-01,F,31.0,OP APOIO,DOMINGO,ENTRE 30 E 35 ANOS,aff0421255da1a075b733bf82bda9e1e
@@ -568,12 +568,12 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2024-08-01,M,26.0,OP RECEPÇÃO,DOMINGO,ENTRE 25 E 30 ANOS,8bf1975cf0d4de26298f3515fdb98f7a
 2024-08-01,F,42.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 40 E 45 ANOS,18865a67b36951c4370116c585610fa4
 2024-08-01,F,30.0,PP GERENCIAMENTO,DOMINGO,ENTRE 30 E 35 ANOS,b8766e669d57d96e5643f955ad981d0f
-2024-08-01,F,31.0,Não informado,Não informado,ENTRE 30 E 35 ANOS,bf744c34e77799cde7f72cd45677d503
+2024-08-01,F,31.0,Não informado,OUTROS,ENTRE 30 E 35 ANOS,bf744c34e77799cde7f72cd45677d503
 2024-07-01,M,20.0,MM BACKSTAGE,VOX,ENTRE 20 E 25 ANOS,fbdfa4f0d2e806815c44a8c9621eb0ba
 2024-07-01,M,25.0,MM BACKSTAGE,DOMINGO,ENTRE 25 E 30 ANOS,568c12d198974c3323264db6c4550204
 2024-07-01,F,23.0,MM COMUNICACAO VOX,VOX,ENTRE 20 E 25 ANOS,6467ddb33f4a06bff4ada869ed1e5af7
 2024-07-01,F,19.0,MM DESIGN,VOX,ENTRE 15 E 20 ANOS,e4123aabc9d22f751d3686fed01f7dc0
-2024-07-01,F,20.0,MM FOTOGRAFIA,Não informado,ENTRE 20 E 25 ANOS,642dc048a39b9a015765551419eb0c44
+2024-07-01,F,20.0,MM FOTOGRAFIA,OUTROS,ENTRE 20 E 25 ANOS,642dc048a39b9a015765551419eb0c44
 2024-07-01,F,26.0,MM ILUMINAÇÃO,DOMINGO,ENTRE 25 E 30 ANOS,810a6bd5d2dc4070ec26b6ba21f11c21
 2024-07-01,M,31.0,MM LIVE STREAMING,DOMINGO,ENTRE 30 E 35 ANOS,eee09aa0e1c32d92b900daea89a1b827
 2024-07-01,M,38.0,MM LIVE STREAMING,DOMINGO,ENTRE 35 E 40 ANOS,c72c55ca98178278be5c6f0d0886b32b
@@ -718,187 +718,187 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2024-03-01,F,,Não informado,EKLEKTOS,Não informado,5ce4cc06af79ad4e6fd535fdfe4e695f
 2024-03-01,F,,Não informado,EKLEKTOS,Não informado,73447992bb0e01ea85886a3f848be8e4
 2024-03-01,F,,Não informado,VOX,Não informado,4c635a6f46a3e7c1d9d0f67eb876443d
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,19cd0dcf2be71d01a271c67911d6cb8f
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,c14c19f10aef71f9732e691ef3af304c
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,fd77c66d01883f384575a9c2cbefd81b
+2024-03-01,F,,Não informado,OUTROS,Não informado,19cd0dcf2be71d01a271c67911d6cb8f
+2024-03-01,F,,Não informado,OUTROS,Não informado,c14c19f10aef71f9732e691ef3af304c
+2024-03-01,M,,Não informado,OUTROS,Não informado,fd77c66d01883f384575a9c2cbefd81b
 2024-03-01,M,,Não informado,EKLEKTOS,Não informado,232b7d02a797e7f3ba84bb9ad2d417cc
-2024-03-01,M,,Não informado,MORUMBI,Não informado,19e68da1ee0c33aed16013159a15adcb
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,ccfe027a54379ffc1098a92877d1199f
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,3d67a8eddd63b7bdfb36f818506e1aa3
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,d8320ed70a3161d62a5024071efb8698
+2024-03-01,M,,Não informado,OUTROS,Não informado,19e68da1ee0c33aed16013159a15adcb
+2024-03-01,F,,Não informado,OUTROS,Não informado,ccfe027a54379ffc1098a92877d1199f
+2024-03-01,F,,Não informado,OUTROS,Não informado,3d67a8eddd63b7bdfb36f818506e1aa3
+2024-03-01,M,,Não informado,OUTROS,Não informado,d8320ed70a3161d62a5024071efb8698
 2024-03-01,M,,Não informado,VOX,Não informado,278311d1bd5a17749be4a876c4da38a6
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,af184fb077162a85a109e901a7fa8aea
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,1f807ed986d7f15a3f907d4fe7d89568
-2024-03-01,F,,Não informado,MORUMBI,Não informado,e256e0fb1fb18b4ce251fa398b6d62ba
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,7f0916641b24fe29dff5dd2cdfce3651
+2024-03-01,F,,Não informado,OUTROS,Não informado,af184fb077162a85a109e901a7fa8aea
+2024-03-01,M,,Não informado,OUTROS,Não informado,1f807ed986d7f15a3f907d4fe7d89568
+2024-03-01,F,,Não informado,OUTROS,Não informado,e256e0fb1fb18b4ce251fa398b6d62ba
+2024-03-01,M,,Não informado,OUTROS,Não informado,7f0916641b24fe29dff5dd2cdfce3651
 2024-03-01,M,,Não informado,EKLEKTOS,Não informado,19a595369515577f129805718b7789ca
-2024-03-01,M,,Não informado,MORUMBI,Não informado,99e06c56830664b1b9f8270806b02f47
-2024-03-01,M,,Não informado,MORUMBI,Não informado,9e17cdc891e887cef221b85c58cefa04
+2024-03-01,M,,Não informado,OUTROS,Não informado,99e06c56830664b1b9f8270806b02f47
+2024-03-01,M,,Não informado,OUTROS,Não informado,9e17cdc891e887cef221b85c58cefa04
 2024-03-01,F,,Não informado,EKLEKTOS,Não informado,8dfe21d8fe72e009973e89d9df0ed4ab
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,b78cbe4cd0015992797f7b314ed8ad9a
-2024-03-01,F,,Não informado,MORUMBI,Não informado,68259283be52f4242e3151f53b133af2
+2024-03-01,F,,Não informado,OUTROS,Não informado,b78cbe4cd0015992797f7b314ed8ad9a
+2024-03-01,F,,Não informado,OUTROS,Não informado,68259283be52f4242e3151f53b133af2
 2024-03-01,F,,Não informado,EKLEKTOS,Não informado,5ec09aca19e3f80ae72615fa324dcd6e
 2024-03-01,M,,Não informado,EKLEKTOS,Não informado,370821fa75a7e773c6e6d9a401321a39
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,7eff8f13a5a2ae75099504e44aa3cbe7
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,2131854aed5114492b5e28075700082f
+2024-03-01,F,,Não informado,OUTROS,Não informado,7eff8f13a5a2ae75099504e44aa3cbe7
+2024-03-01,F,,Não informado,OUTROS,Não informado,2131854aed5114492b5e28075700082f
 2024-03-01,F,,Não informado,EKLEKTOS,Não informado,3ef0f4420bab5bf4725f6884d1db01fa
 2024-03-01,F,,Não informado,VOX,Não informado,79aa9f29ffe1c2f58c82b07d087885ab
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,8dd1615f2f84a0d238ef6104d28a6b0c
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,52f193eefd741267960abc0925506c43
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,0f75706efebb2d87cb665bcb9382a07e
+2024-03-01,M,,Não informado,OUTROS,Não informado,8dd1615f2f84a0d238ef6104d28a6b0c
+2024-03-01,F,,Não informado,OUTROS,Não informado,52f193eefd741267960abc0925506c43
+2024-03-01,M,,Não informado,OUTROS,Não informado,0f75706efebb2d87cb665bcb9382a07e
 2024-03-01,M,,Não informado,EKLEKTOS,Não informado,61020cd361df584943dd3e7cdde99287
-2024-03-01,M,,Não informado,BUTANTÃ,Não informado,73e2a680b49c5afb112608796740eb62
-2024-03-01,F,,Não informado,BUTANTÃ,Não informado,db69180f2140b73f26c85fb7a49044d5
+2024-03-01,M,,Não informado,OUTROS,Não informado,73e2a680b49c5afb112608796740eb62
+2024-03-01,F,,Não informado,OUTROS,Não informado,db69180f2140b73f26c85fb7a49044d5
 2024-02-01,F,,Não informado,VOX,Não informado,b69abe954885f91eb4324afa0289229b
 2024-02-01,M,,Não informado,VOX,Não informado,374057bd69f72baf18625125b31a5932
 2024-02-01,F,,Não informado,EKLEKTOS,Não informado,df88f5934ce76b2644d6192ba805c550
-2024-02-01,F,,Não informado,MORUMBI,Não informado,2e5153d64b2bb8c88ad783b594b1c6ab
+2024-02-01,F,,Não informado,OUTROS,Não informado,2e5153d64b2bb8c88ad783b594b1c6ab
 2024-02-01,F,,Não informado,VOX,Não informado,fb020fa47aa7ec6b314ccfcc5445142d
 2024-02-01,F,,Não informado,EKLEKTOS,Não informado,1de39e3e3b5ff3b5576620e5d2518c26
-2024-02-01,F,,Não informado,MORUMBI,Não informado,1de4713ac206e92028f0e64f993af7ff
-2024-02-01,M,,Não informado,MORUMBI,Não informado,afb58e3bc8ed328b30e5d515b243e988
+2024-02-01,F,,Não informado,OUTROS,Não informado,1de4713ac206e92028f0e64f993af7ff
+2024-02-01,M,,Não informado,OUTROS,Não informado,afb58e3bc8ed328b30e5d515b243e988
 2024-02-01,F,,Não informado,VOX,Não informado,739a38a7cfee9c3140e6160c6788b508
 2024-02-01,F,,Não informado,VOX,Não informado,cedd292d846f10249738b8e2cb87877d
 2024-02-01,F,,Não informado,VOX,Não informado,49db5db00501a30ba69cedab7dbfc4be
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,dce34c1353bbcd8806c095f7c656d214
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,39f4519cd18894e93041873e92c9cedd
+2024-02-01,F,,Não informado,OUTROS,Não informado,dce34c1353bbcd8806c095f7c656d214
+2024-02-01,F,,Não informado,OUTROS,Não informado,39f4519cd18894e93041873e92c9cedd
 2024-02-01,M,,Não informado,VOX,Não informado,de8ab7a12718db345e28db0b7651aaa7
 2024-02-01,M,,Não informado,VOX,Não informado,e8fd39a5b0b5cfec1f6d101324c5a4b3
-2024-02-01,M,,Não informado,BUTANTÃ,Não informado,599f7fec7a4792128d5e790562c9d1f7
+2024-02-01,M,,Não informado,OUTROS,Não informado,599f7fec7a4792128d5e790562c9d1f7
 2024-02-01,M,,Não informado,EKLEKTOS,Não informado,65d3dd4e43edb01c2cfcb5d723aa2066
 2024-02-01,F,,Não informado,EKLEKTOS,Não informado,080c0cc8d7b462ba00b582a70ec746ec
-2024-02-01,M,,Não informado,MORUMBI,Não informado,a488f9e428dc551c17ee1d2035e9c756
-2024-02-01,M,,Não informado,BUTANTÃ,Não informado,ab778e85e723e692ecbe2002a3cf85c0
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,9b48756cf953a6b90018d2405fc31965
-2024-02-01,M,,Não informado,MORUMBI,Não informado,09b0e193243d63e123b62ae4a133fc1f
-2024-02-01,M,,Não informado,BUTANTÃ,Não informado,57a6b1b137adcdda3ba6123b9d5eceb7
-2024-02-01,M,,Não informado,BUTANTÃ,Não informado,a9a68984bd1b922eb0ca0a275d7a19ec
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,7a00d8cf0e8e67db8112d48699f71800
-2024-02-01,M,,Não informado,BUTANTÃ,Não informado,e107f59e83807e953f009dcae3a387df
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,7b909822d86a7b18d56e57604826d04c
-2024-02-01,F,,Não informado,BUTANTÃ,Não informado,c8cab287b10e0bb8ee0c8350e830818c
-2024-02-01,M,,Não informado,MORUMBI,Não informado,3bd2314ecdde66c2aebb67d098e5bc3f
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2024-02-01,M,,Não informado,OUTROS,Não informado,a488f9e428dc551c17ee1d2035e9c756
+2024-02-01,M,,Não informado,OUTROS,Não informado,ab778e85e723e692ecbe2002a3cf85c0
+2024-02-01,F,,Não informado,OUTROS,Não informado,9b48756cf953a6b90018d2405fc31965
+2024-02-01,M,,Não informado,OUTROS,Não informado,09b0e193243d63e123b62ae4a133fc1f
+2024-02-01,M,,Não informado,OUTROS,Não informado,57a6b1b137adcdda3ba6123b9d5eceb7
+2024-02-01,M,,Não informado,OUTROS,Não informado,a9a68984bd1b922eb0ca0a275d7a19ec
+2024-02-01,F,,Não informado,OUTROS,Não informado,7a00d8cf0e8e67db8112d48699f71800
+2024-02-01,M,,Não informado,OUTROS,Não informado,e107f59e83807e953f009dcae3a387df
+2024-02-01,F,,Não informado,OUTROS,Não informado,7b909822d86a7b18d56e57604826d04c
+2024-02-01,F,,Não informado,OUTROS,Não informado,c8cab287b10e0bb8ee0c8350e830818c
+2024-02-01,M,,Não informado,OUTROS,Não informado,3bd2314ecdde66c2aebb67d098e5bc3f
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,43a3b811a583bbc33a9ec2d548a71a7a
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,208c34646e2b52593bba6c12d4a0f0fe
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,43a3b811a583bbc33a9ec2d548a71a7a
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,208c34646e2b52593bba6c12d4a0f0fe
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,43a3b811a583bbc33a9ec2d548a71a7a
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,208c34646e2b52593bba6c12d4a0f0fe
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,43a3b811a583bbc33a9ec2d548a71a7a
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,208c34646e2b52593bba6c12d4a0f0fe
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,0aecb0242b8395a4e1e0ec2884853077
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d286166bfb04c875ade226bf2f4d7a5a
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,0aecb0242b8395a4e1e0ec2884853077
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d286166bfb04c875ade226bf2f4d7a5a
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,e8010bf841c502b777d0763ded1e3a48
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,208c34646e2b52593bba6c12d4a0f0fe
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,e8010bf841c502b777d0763ded1e3a48
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,208c34646e2b52593bba6c12d4a0f0fe
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,VOX,Não informado,85e5e7b19f4ac1a93983926f135152c8
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-11-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-11-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-11-01,Não informado,,Não informado,EKLEKTOS,Não informado,9a5f7ae6fde39f04ad777cbb754a5310
 2023-10-01,Não informado,,Não informado,EKLEKTOS,Não informado,bb70d24db6a703b8efea078af0bccbca
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-10-01,Não informado,,Não informado,EKLEKTOS,Não informado,bb70d24db6a703b8efea078af0bccbca
 2023-10-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-10-01,Não informado,,Não informado,EKLEKTOS,Não informado,b50ea28a46338682586c99960c080c39
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d286166bfb04c875ade226bf2f4d7a5a
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,208c34646e2b52593bba6c12d4a0f0fe
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d286166bfb04c875ade226bf2f4d7a5a
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,208c34646e2b52593bba6c12d4a0f0fe
 2023-10-01,Não informado,,Não informado,EKLEKTOS,Não informado,b50ea28a46338682586c99960c080c39
-2023-10-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d286166bfb04c875ade226bf2f4d7a5a
-2023-10-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d286166bfb04c875ade226bf2f4d7a5a
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-10-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,064532bffbd4a3d8bb8001c21486233a
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,064532bffbd4a3d8bb8001c21486233a
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,2810a568b622debe745e3631e3101657
-2023-10-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-10-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,064532bffbd4a3d8bb8001c21486233a
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,064532bffbd4a3d8bb8001c21486233a
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,2810a568b622debe745e3631e3101657
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-10-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-09-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-09-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-09-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-08-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-08-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,BUTANTÃ,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-08-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,EKLEKTOS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2023-07-01,Não informado,,Não informado,VOX,Não informado,d41d8cd98f00b204e9800998ecf8427e
-2023-07-01,Não informado,,Não informado,MORUMBI,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2023-07-01,Não informado,,Não informado,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
 2026-03-01,M,27.0,MM BACKSTAGE,VOX,ENTRE 25 E 30 ANOS,81a7d0b22da687237e1c131b09b6f924
 2026-03-01,F,40.0,MM FOTOGRAFIA,DOMINGO,ENTRE 40 E 45 ANOS,059c88524becfb16342c1f6dd0d4a838
 2026-03-01,M,31.0,MM FOTOGRAFIA,DOMINGO,ENTRE 30 E 35 ANOS,9f1996f60149abe1d2a95a044f67e0d3
@@ -912,8 +912,8 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2026-03-01,F,26.0,MM LIVE STREAMING,EKLEKTOS,ENTRE 25 E 30 ANOS,dc1a869549ef73daf8058dde841774d4
 2026-03-01,F,26.0,MM MÍDIAS,VOX,ENTRE 25 E 30 ANOS,d29ccaff7f5b4795294228e8c46ae42a
 2026-03-01,M,50.0,MM MÍDIAS,DOMINGO,ENTRE 50 E 55 ANOS,0c93904e50e23400d1e48ba806061949
-2026-03-01,M,22.0,MM MÍDIAS,RISE DOMINGO,ENTRE 20 E 25 ANOS,2ac90775a10c78edc706772a3843d894
-2026-03-01,M,24.0,MM MÍDIAS,RISE DOMINGO,ENTRE 20 E 25 ANOS,bb230c0c75721fb8f4c076bccb943b50
+2026-03-01,M,22.0,MM MÍDIAS,DOMINGO,ENTRE 20 E 25 ANOS,2ac90775a10c78edc706772a3843d894
+2026-03-01,M,24.0,MM MÍDIAS,DOMINGO,ENTRE 20 E 25 ANOS,bb230c0c75721fb8f4c076bccb943b50
 2026-03-01,M,44.0,MM SOM,DOMINGO,ENTRE 40 E 45 ANOS,2ad894f3bccc4817dc1f75c7cda88b67
 2026-03-01,M,37.0,MM TÉCNICA,DOMINGO,ENTRE 35 E 40 ANOS,ae8b8f35c6ed9d9640035a939432c353
 2026-03-01,M,33.0,MM TÉCNICA,EKLEKTOS,ENTRE 30 E 35 ANOS,8b00fad904e871dce64059f4224c5b53
@@ -936,7 +936,6 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2026-03-01,M,58.0,OP COOKING,DOMINGO,ENTRE 55 E 60 ANOS,c18b4ff7b90b458974aa425bdd01f16e
 2026-03-01,M,45.0,OP COOKING,DOMINGO,ENTRE 45 E 50 ANOS,8c6adbc307e82a8f4bd308cf766e6557
 2026-03-01,F,29.0,OP COOKING,DOMINGO,ENTRE 25 E 30 ANOS,7e76d40ecb9d82dc3e1ce75aa7bcab06
-2026-03-01,F,46.0,OP COOKING,DOMINGO,ENTRE 45 E 50 ANOS,8f623dee45bb05a12d0746d4d4e71733
 2026-03-01,M,38.0,OP LOGÍSTICA,EKLEKTOS,ENTRE 35 E 40 ANOS,ec897f13d4cdb8b8394974ff62c60b6a
 2026-03-01,F,31.0,OP LOGÍSTICA,EKLEKTOS,ENTRE 30 E 35 ANOS,570f2fbf47455d2f9a920710f2d9ed84
 2026-03-01,M,31.0,OP LOGÍSTICA,EKLEKTOS,ENTRE 30 E 35 ANOS,29f0163f8af0edad7d491e18cf0b68c7
@@ -951,7 +950,6 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2026-03-01,F,23.0,OP RECEPÇÃO,VOX,ENTRE 20 E 25 ANOS,96284210e511c6fff0416ec3636cff30
 2026-03-01,F,19.0,OP RECEPÇÃO,VOX,ENTRE 15 E 20 ANOS,1f87a2936c3a4b2791a06467abe4e8b5
 2026-03-01,F,22.0,OP RECEPÇÃO,VOX,ENTRE 20 E 25 ANOS,0a52a6614cda8dde417dc5f3b32a4b94
-2026-03-01,F,21.0,OP RECEPÇÃO,VOX,ENTRE 20 E 25 ANOS,cd882353c0fe9a60ddd6115d3b3e1088
 2026-03-01,F,27.0,OP RECEPÇÃO,DOMINGO,ENTRE 25 E 30 ANOS,1b31e111542ae4041b9972df854e3a65
 2026-03-01,F,34.0,OP RECEPÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,fbc4c88eedb1364d5f98d318305e196d
 2026-03-01,F,55.0,OP RECEPÇÃO,DOMINGO,ENTRE 55 E 60 ANOS,97010c95715b155f1719e51a252f0721
@@ -960,12 +958,112 @@ dataReferencia,sexo,idade,area,campus,faixaEtaria,voluntarioId
 2026-03-01,F,57.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 55 E 60 ANOS,cf6c93b5624c4715ca93b462cc853479
 2026-03-01,F,35.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 35 E 40 ANOS,4e145dc588a0ad86df9a28aa5a742d30
 2026-03-01,M,21.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 20 E 25 ANOS,2fe679cc9e1192553cbcda960f4b502a
-2026-03-01,F,29.0,OP SALA DE VOLUNTÁRIOS,VOX,ENTRE 25 E 30 ANOS,21a6d12ab17ebabea9b3373ac9bb2f5a
+2026-03-01,F,29.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 25 E 30 ANOS,21a6d12ab17ebabea9b3373ac9bb2f5a
 2026-03-01,M,34.0,OP SEC,DOMINGO,ENTRE 30 E 35 ANOS,63f5e797f84f1197489c67fe5e0d2528
 2026-03-01,F,32.0,NEXUS COMUNICAÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,3a85b02d0aa99dbba1bd3f8a69956f62
 2026-03-01,F,38.0,NEXUS COMUNICAÇÃO,DOMINGO,ENTRE 35 E 40 ANOS,b10835fbdc03642c8ea2efecbcaa8fa4
 2026-03-01,F,22.0,MM GRAFIC CONTENT,VOX,ENTRE 20 E 25 ANOS,fd1f66eca158509fcce33d72276a4354
 2026-03-01,F,34.0,MM GRAFIC CONTENT,EKLEKTOS,ENTRE 30 E 35 ANOS,a4043e35f0a41df431f0e8324ae2dffa
-2026-03-01,M,26.0,MANAGER,FLOW,ENTRE 25 E 30 ANOS,c813ecf427a85d8d5331f2e1a735268a
+2026-03-01,M,26.0,MANAGER,OUTROS,ENTRE 25 E 30 ANOS,c813ecf427a85d8d5331f2e1a735268a
 2026-03-01,F,31.0,MANAGER,EKLEKTOS,ENTRE 30 E 35 ANOS,6f412f8ec3a08d94ba6c0bcb1eb128bf
-2026-03-01,F,41.0,Não informado,DOMINGO,ENTRE 40 E 45 ANOS,768343944fc31c00b4a339c2839925f4
+,Não informado,,ÁREA,OUTROS,Não informado,d41d8cd98f00b204e9800998ecf8427e
+2026-05-01,F,30.0,MM DESIGN,DOMINGO,ENTRE 30 E 35 ANOS,4ada1ccc1bb37319e6fafb4bab5ef012
+2026-05-01,M,40.0,MM GRAFIC CONTENT,EKLEKTOS,ENTRE 40 E 45 ANOS,ab0974e875a2da552c5b900f03243525
+2026-05-01,F,23.0,MM GRAFIC CONTENT,VOX,ENTRE 20 E 25 ANOS,96b687f2e87ebaf792c557cf8e0a1b88
+2026-05-01,M,36.0,MM GRAFIC CONTENT,VOX,ENTRE 35 E 40 ANOS,383798f437e94bf212860fc480148ef4
+2026-05-01,M,41.0,MM LIVE STREAMING,DOMINGO,ENTRE 40 E 45 ANOS,47428203ba3d27acad431b4a8edc6d5a
+2026-05-01,M,20.0,MM LIVE STREAMING,DOMINGO,ENTRE 20 E 25 ANOS,792e3eaef8a2861d93932f4ac0697344
+2026-05-01,F,27.0,MM LIVE STREAMING,OUTROS,ENTRE 25 E 30 ANOS,7ff219d96b96c561f4dd29dd150effbf
+2026-05-01,F,55.0,MM LIVE STREAMING,DOMINGO,ENTRE 55 E 60 ANOS,a321092fda15fac3c8160ea3cd4e5613
+2026-05-01,F,34.0,MM LIVE STREAMING,EKLEKTOS,ENTRE 30 E 35 ANOS,ac0e913c91f0cffcba33e0c13443fd7a
+2026-05-01,F,34.0,MM LIVE STREAMING,EKLEKTOS,ENTRE 30 E 35 ANOS,c0a43901c3b4625757e765a2658678a2
+2026-05-01,F,39.0,MM LIVE STREAMING,EKLEKTOS,ENTRE 35 E 40 ANOS,c80e767b352116d49ea120aad2b3f17c
+2026-05-01,F,20.0,MM MÍDIAS,VOX,ENTRE 20 E 25 ANOS,8df26edaacc10b415e2f9e2d2f0d4da9
+2026-05-01,F,20.0,MM PRODUÇÃO DE PALCO,VOX,ENTRE 20 E 25 ANOS,b213259edf4bc56c6e5745fb28b5fe21
+2026-05-01,F,39.0,MM SOM,DOMINGO,ENTRE 35 E 40 ANOS,232a660913789128e257765eaa9a60c5
+2026-05-01,M,44.0,MM SOM,DOMINGO,ENTRE 40 E 45 ANOS,47c9e7153390a062e0bf8faadc8b0e11
+2026-05-01,F,26.0,MM SOM,VOX,ENTRE 25 E 30 ANOS,e73c9f0e7db62a85275124909e5857a5
+2026-05-01,M,33.0,MM TÉCNICA,DOMINGO,ENTRE 30 E 35 ANOS,22713b6a10992bcb8d38d717d6dcf73c
+2026-05-01,M,33.0,MM TÉCNICA,DOMINGO,ENTRE 30 E 35 ANOS,a37d177f4c70abd19126dc39971cb255
+2026-05-01,M,32.0,NEXUS COMUNICAÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,8af5c67a24a52e32d7f4e8a976157109
+2026-05-01,F,42.0,NEXUS COMUNICAÇÃO,DOMINGO,ENTRE 40 E 45 ANOS,246428c288146f6270eafe5c9edbbb90
+2026-05-01,M,61.0,NEXUS COMUNICAÇÃO,DOMINGO,ACIMA DE 60 ANOS,2a9178e98b6f8e76fc86433b0c225096
+2026-05-01,F,23.0,NEXUS COMUNICAÇÃO,VOX,ENTRE 20 E 25 ANOS,ac2616b8ca7da6c793ddc8f187c14b6d
+2026-05-01,F,42.0,NEXUS COMUNICAÇÃO,OUTROS,ENTRE 40 E 45 ANOS,a992b280aa155b7ae4cd080948fbb7e6
+2026-05-01,F,37.0,NEXUS COMUNICAÇÃO,DOMINGO,ENTRE 35 E 40 ANOS,9487ec750da6000b40ad9f7274bc21a6
+2026-05-01,F,20.0,NEXUS COMUNICAÇÃO,OUTROS,ENTRE 20 E 25 ANOS,9c4b889b56b3ef6359eb31bbf93d62c4
+2026-05-01,F,46.0,NEXUS INTEGRACAO,OUTROS,ENTRE 45 E 50 ANOS,f13b5ef6853f7e0e4df8c9590a87c5c8
+2026-05-01,F,42.0,NEXUS INTEGRACAO,OUTROS,ENTRE 40 E 45 ANOS,2014d8e09d3e8e8fe208fe823e54af8b
+2026-05-01,F,30.0,NEXUS INTEGRACAO,OUTROS,ENTRE 30 E 35 ANOS,0221fed08f8d91fa629f926a7d3a8b95
+2026-05-01,M,32.0,NEXUS INTEGRACAO,OUTROS,ENTRE 30 E 35 ANOS,9fd74d4a520886cbe000649ff42b13af
+2026-05-01,M,32.0,NEXUS INTEGRACAO,OUTROS,ENTRE 30 E 35 ANOS,c75d3cdb636c97ab59a652c7b285bc5d
+2026-05-01,F,28.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 25 E 30 ANOS,366aa2be41b0958ee16bc877563e4c3e
+2026-05-01,F,33.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 30 E 35 ANOS,965eb59a1ec2c8197e74494cd90f4668
+2026-05-01,F,29.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 25 E 30 ANOS,7e56e9bbfcd7d21cf2a7242bfaa0ac39
+2026-05-01,F,29.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 25 E 30 ANOS,39d3222586c754e94b0080006397ff0a
+2026-05-01,F,19.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 15 E 20 ANOS,aa15d0ca665553ae578e8284db53a299
+2026-05-01,M,45.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 45 E 50 ANOS,29315c41767fda712e60201c965deccd
+2026-05-01,F,25.0,OP ACESSIBILIDADE,OUTROS,ENTRE 25 E 30 ANOS,b2758bf653bb4ca8a3ea6a1454cc55f5
+2026-05-01,M,30.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 30 E 35 ANOS,e68ce5c67f68749005b19197f243ff34
+2026-05-01,F,35.0,OP ACESSIBILIDADE,OUTROS,ENTRE 35 E 40 ANOS,684406d3e2fc3bf3441fdda8c9bd9eea
+2026-05-01,M,25.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 25 E 30 ANOS,d34b0efc4c0dde616d87a3f9b72b1c90
+2026-05-01,F,24.0,OP ACESSIBILIDADE,DOMINGO,ENTRE 20 E 25 ANOS,44982ee24d1ac89b5f52aed15ffaad90
+2026-05-01,F,28.0,OP APOIO,DOMINGO,ENTRE 25 E 30 ANOS,14d0c263d6c20fc8f3548401401b7d7a
+2026-05-01,F,29.0,OP APOIO,DOMINGO,ENTRE 25 E 30 ANOS,0cb65c4dc0fe5eafea1d6fa178e0f8f3
+2026-05-01,M,30.0,OP APOIO,EKLEKTOS,ENTRE 30 E 35 ANOS,1baf8a1650101e481bd4de67267ace48
+2026-05-01,F,24.0,OP APOIO,VOX,ENTRE 20 E 25 ANOS,9f2c43b89ce5913659cc003644c16887
+2026-05-01,F,23.0,OP APOIO,DOMINGO,ENTRE 20 E 25 ANOS,c804cbc6d61f2e2e3585f598de39292d
+2026-05-01,F,26.0,OP APOIO,VOX,ENTRE 25 E 30 ANOS,a97334647253f1d7c3e2e252f8892ca9
+2026-05-01,F,19.0,OP APOIO,DOMINGO,ENTRE 15 E 20 ANOS,20534660b4e1be730a2e98e5d4d4f06a
+2026-05-01,M,19.0,OP APOIO,DOMINGO,ENTRE 15 E 20 ANOS,e5a20cba96e9650219a2ea31c245d8f0
+2026-05-01,M,36.0,OP APOIO,DOMINGO,ENTRE 35 E 40 ANOS,7a9271432172bf6af89e2a9f088f3d14
+2026-05-01,M,37.0,OP APOIO,DOMINGO,ENTRE 35 E 40 ANOS,3f07c5551052c9fdd6dae9101631c804
+2026-05-01,F,31.0,OP APOIO,DOMINGO,ENTRE 30 E 35 ANOS,e64ef14a60cbfd867a0c6c440a38b00f
+2026-05-01,F,25.0,OP APOIO,EKLEKTOS,ENTRE 25 E 30 ANOS,6a80324faa9bdd229dc04a70c2be1d4e
+2026-05-01,F,22.0,OP APOIO,DOMINGO,ENTRE 20 E 25 ANOS,c3fc6fc1d41f5e67b8a8efaafbb4d910
+2026-05-01,F,45.0,OP APOIO,DOMINGO,ENTRE 45 E 50 ANOS,edc033b7f7fa5bf7818c10b3795504c7
+2026-05-01,F,28.0,OP APOIO,EKLEKTOS,ENTRE 25 E 30 ANOS,9609fd20b82498c1c0d3aa16fd7be778
+2026-05-01,M,47.0,OP APOIO,DOMINGO,ENTRE 45 E 50 ANOS,ea69439c3158d1eda4eac7d4783d6687
+2026-05-01,F,36.0,OP APOIO,DOMINGO,ENTRE 35 E 40 ANOS,031c681151141bd5513ec77d055cc65b
+2026-05-01,F,50.0,OP COOKING,DOMINGO,ENTRE 50 E 55 ANOS,d78773aa8ef2e277d0a896939b3cd58c
+2026-05-01,F,36.0,OP COOKING,DOMINGO,ENTRE 35 E 40 ANOS,36c7cd7f5fb8eb43177305a4a34105e8
+2026-05-01,F,21.0,OP COOKING,DOMINGO,ENTRE 20 E 25 ANOS,65398670b0964e6071b41be3ce04a337
+2026-05-01,F,30.0,OP COOKING,DOMINGO,ENTRE 30 E 35 ANOS,fe0b54bdf171f5a657491f2247c74e77
+2026-05-01,M,38.0,OP COOKING,DOMINGO,ENTRE 35 E 40 ANOS,94c1760d51b1246546703e2f4641eee6
+2026-05-01,F,37.0,OP COOKING,EKLEKTOS,ENTRE 35 E 40 ANOS,90414db0a098b158ee0005736bf0d1d6
+2026-05-01,M,29.0,OP LOGÍSTICA,EKLEKTOS,ENTRE 25 E 30 ANOS,1f628a4e0a1b5743ef5db696663abc77
+2026-05-01,F,21.0,OP LOGÍSTICA,DOMINGO,ENTRE 20 E 25 ANOS,8fefba2e11e5f5d8240a3eb900493c38
+2026-05-01,F,29.0,OP RECEPÇÃO,DOMINGO,ENTRE 25 E 30 ANOS,c5584c1465d4907e9a3eaae5ea70bbf2
+2026-05-01,F,44.0,OP RECEPÇÃO,DOMINGO,ENTRE 40 E 45 ANOS,ad8fb71dd155bad48c8c9f4296680209
+2026-05-01,F,24.0,OP RECEPÇÃO,VOX,ENTRE 20 E 25 ANOS,80a1567a5e7a019d69b2ca6147f86678
+2026-05-01,F,45.0,OP RECEPÇÃO,DOMINGO,ENTRE 45 E 50 ANOS,862f8713a0266c8b73231a5a1af06957
+2026-05-01,M,44.0,OP RECEPÇÃO,DOMINGO,ENTRE 40 E 45 ANOS,cae3020e2082a2a6523effed5ccbcf39
+2026-05-01,F,28.0,OP RECEPÇÃO,EKLEKTOS,ENTRE 25 E 30 ANOS,b7ceb469b5313a9a084afcbef248af01
+2026-05-01,F,26.0,OP RECEPÇÃO,VOX,ENTRE 25 E 30 ANOS,b6b21fad3c41cc847b6290bf08534af4
+2026-05-01,M,25.0,OP RECEPÇÃO,VOX,ENTRE 25 E 30 ANOS,f6c8b91918d912958e27ac8cfe0970d5
+2026-05-01,F,31.0,OP RECEPÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,bf2527b7a54d47d2afeb51f4099c1783
+2026-05-01,F,30.0,OP RECEPÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,b5d146a55235d9c339d0c7b478eae7e2
+2026-05-01,F,28.0,OP RECEPÇÃO,EKLEKTOS,ENTRE 25 E 30 ANOS,1193d991da76458ec09cd4b1636eec2f
+2026-05-01,M,30.0,OP RECEPÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,fbe7f511a73d597437e73b31f3e00ed5
+2026-05-01,F,25.0,OP RECEPÇÃO,VOX,ENTRE 25 E 30 ANOS,2d5e222e8792d60814ccc139b719aebf
+2026-05-01,F,30.0,OP RECEPÇÃO,DOMINGO,ENTRE 30 E 35 ANOS,6a54b78d63186f004a2f2c9860606cb3
+2026-05-01,F,22.0,OP RECEPÇÃO,VOX,ENTRE 20 E 25 ANOS,e262abf72e880ac21715645b36c3d9a6
+2026-05-01,F,20.0,OP RECEPÇÃO,DOMINGO,ENTRE 20 E 25 ANOS,dbd20ecbcff1ddea708fcd2c86a58025
+2026-05-01,F,40.0,OP RECEPÇÃO,VOX,ENTRE 40 E 45 ANOS,effb4446af52a98793e94e9c0b0d035f
+2026-05-01,F,38.0,OP RECEPÇÃO,EKLEKTOS,ENTRE 35 E 40 ANOS,bab16cf7398501c3373fa777ad66eedc
+2026-05-01,F,31.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 30 E 35 ANOS,e944d792a628524be01afa9ad11d0ff8
+2026-05-01,M,37.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 35 E 40 ANOS,543ff847d9a12a685d28e4dc2d40b983
+2026-05-01,F,54.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 50 E 55 ANOS,200031fff5165b8279176b03fa952448
+2026-05-01,M,18.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 15 E 20 ANOS,1e079dc3d72576de87a86f31f776bf25
+2026-05-01,F,29.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 25 E 30 ANOS,ef60078aed265ffa952ace249be92c77
+2026-05-01,F,38.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 35 E 40 ANOS,c2289d60f3c5e2b8d45d4382cf42f894
+2026-05-01,M,30.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 30 E 35 ANOS,3dc31aafab7573712998fe6c130c1379
+2026-05-01,F,35.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 35 E 40 ANOS,d26663e0ae155eb1606a8886155bddf9
+2026-05-01,F,25.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 25 E 30 ANOS,389265c5d533a48e0a45d4789aeab879
+2026-05-01,F,26.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 25 E 30 ANOS,c1e5f7b35adbdb7482c73046b4b814de
+2026-05-01,F,35.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 35 E 40 ANOS,e5e12ee0ac9200220c21d91ea7453eb9
+2026-05-01,F,33.0,OP SALA DE VOLUNTÁRIOS,DOMINGO,ENTRE 30 E 35 ANOS,073bbaa3d92ed9b52069ce43068e4829
+2026-05-01,M,39.0,OP SEC,DOMINGO,ENTRE 35 E 40 ANOS,e64a24c5daa3c4468b8dab00b730ce1a
+2026-05-01,M,37.0,OP SEC,DOMINGO,ENTRE 35 E 40 ANOS,1c72aa8d060710535a67ecddea285c1e
+2026-05-01,M,40.0,OP SEC,DOMINGO,ENTRE 40 E 45 ANOS,e21ba9dd63fe426f98fed33ff6cf70e5
+2026-05-01,M,55.0,OP SEC,OUTROS,ENTRE 55 E 60 ANOS,f5f71c36e9ffed9aeda0287a7eaa4c8a
